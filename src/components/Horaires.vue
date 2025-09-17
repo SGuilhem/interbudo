@@ -54,36 +54,72 @@
       </table>
     </div>
 
-    <!-- Version mobile Planning : Carrousel -->
+    <!-- Version mobile Planning -->
     <div v-if="viewMode === 'planning' && isMobile" class="mt-10">
-      <swiper :slides-per-view="1" :space-between="20" class="h-full">
-        <swiper-slide v-for="(day, i) in planningByDay" :key="i">
-          <div class="p-4 border rounded-lg shadow-sm bg-white">
-            <h2 class="text-lg font-bold text-center mb-4">{{ day.name }}</h2>
-            <div
-              v-for="(cours, j) in day.courses"
-              :key="j"
-              class="mb-4 border-b pb-2"
-            >
-              <h3 class="font-semibold">{{ cours.title }}</h3>
-              <p>{{ cours.time }}</p>
-              <a href="/gymnase" class="text-blue-600 underline">{{
-                cours.gym
-              }}</a>
-            </div>
+      <div v-if="viewMode === 'planning' && isMobile" class="mt-10 relative">
+    <div
+      v-if="currentIndex > 0"
+      class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full p-2 shadow-md"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" class="w-6 h-6 text-gray-700">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M15 19l-7-7 7-7"/>
+      </svg>
+    </div>
+
+    <div
+      v-if="currentIndex < planningByDay.length - 1"
+      class="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full p-2 shadow-md"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+        stroke="currentColor" class="w-6 h-6 text-gray-700">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M9 5l7 7-7 7"/>
+      </svg>
+    </div>
+
+    <!-- Carrousel -->
+    <swiper
+      :slides-per-view="1"
+      :space-between="20"
+      class="h-full"
+      @slideChange="onSlideChange"
+    >
+      <swiper-slide v-for="(day, i) in planningByDay" :key="i">
+        <div class="p-4 border rounded-lg shadow-sm bg-white">
+          <h2 class="text-lg font-bold text-center mb-4">{{ day.name }}</h2>
+          <div
+            v-for="(cours, j) in day.courses"
+            :key="j"
+            class="mb-4 border-b pb-2"
+          >
+            <h3 class="font-semibold">{{ cours.title }}</h3>
+            <p>{{ cours.time }}</p>
+            <a href="/gymnase" class="text-blue-600 underline">
+              {{ cours.gym }}
+            </a>
           </div>
-          <div v-if="day.name === 'Samedi'" class="p-4 mt-5 border rounded-lg shadow-sm bg-white">
-            <h2 class="text-lg font-bold text-center mb-4">Samedi 1 fois par mois</h2>
-            <div
-              class="mb-4 border-b pb-2"
-            >
-              <h3 class="font-semibold">Judo Adulte (Ado >10 ans)</h3>
-              <p>16h30 - 18h30</p>
-              <a href="/gymnase" class="text-blue-600 underline">Stade Charlety</a>
-            </div>
+        </div>
+
+        <div
+          v-if="day.name === 'Samedi'"
+          class="p-4 mt-5 border rounded-lg shadow-sm bg-white"
+        >
+          <h2 class="text-lg font-bold text-center mb-4">
+            Samedi 1 fois par mois
+          </h2>
+          <div class="mb-4 border-b pb-2">
+            <h3 class="font-semibold">Judo Adulte (Ado >10 ans)</h3>
+            <p>16h30 - 18h30</p>
+            <a href="/gymnase" class="text-blue-600 underline">
+              Stade Charlety
+            </a>
           </div>
-        </swiper-slide>
-      </swiper>
+        </div>
+      </swiper-slide>
+    </swiper>
+  </div>
     </div>
 
     <!-- Vue Texte -->
@@ -122,6 +158,7 @@ export default {
       toggleMobileMenu: false,
       viewMode: 'planning',
       isSelected: null,
+      currentIndex: 0,
 
       // Planning Desktop
       planningData: [
@@ -280,7 +317,10 @@ export default {
       this.viewMode = 'planning'
       this.planningIsSelected = true
       this.textIsSelected = false
-    }
+    },
+    onSlideChange(swiper) {
+      this.currentIndex = swiper.activeIndex
+    },
   },
 }
 </script>

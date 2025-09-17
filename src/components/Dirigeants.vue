@@ -2,9 +2,9 @@
   <!-- Desktop -->
   <div class="container lg:pt-14 py-12" id="dirigeants">
     <h1>Équipe Dirigeante</h1>
-    <div class="flex flex-wrap justify-center gap-8 pt-8">
+    <div class="flex flex-wrap flex-col lg:flex-row justify-center gap-8 pt-8">
       <!-- Carte -->
-      <div class="w-1/4 bg-white rounded-xl shadow-md flex flex-col items-center p-4">
+      <div class="lg:w-1/4 bg-white rounded-xl shadow-md flex flex-col items-center p-4">
         <img
           src="/dirigeant-guillaume-uzan.jpg"
           alt="Trésorier Guillaume Uzan"
@@ -22,7 +22,7 @@
           <p class="text-gray-800 mt-1">06 80 82 14 60</p>
         </div>
       </div>
-      <div class="w-1/4 bg-white rounded-xl shadow-md flex flex-col items-center p-4">
+      <div class="lg:w-1/4 bg-white rounded-xl shadow-md flex flex-col items-center p-4">
         <img
           src="/dirigeant-caroline-masini.jpg"
           alt="Présidente Caroline Masini"
@@ -40,7 +40,7 @@
           <p class="text-gray-800 mt-1">06 11 18 34 97</p>
         </div>
       </div>
-      <div class="w-1/4 bg-white rounded-xl shadow-md flex flex-col items-center p-4">
+      <div class="lg:w-1/4 bg-white rounded-xl shadow-md flex flex-col items-center p-4">
         <img
           src="/professeur-charly.jpg"
           alt="Professeur Charly Wable"

@@ -2,8 +2,8 @@
   <!-- Desktop -->
   <div class="container lg:pt-14 py-12" id="professeurs">
     <h1>Les Professeurs</h1>
-    <div class="flex row justify-center pt-8">
-      <div class="col-xs-12 col-sm-6 col-md-4 bg-white">
+    <div class="flex lg:flex-row flex-col justify-center pt-8">
+      <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="professeurs"><img
               src="../../public/professeur-charly.jpg"
               alt="Professeur Charly Wable"
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-10 bg-white">
+      <div class="col-xs-12 col-sm-6 col-md-4 lg:mx-10 mx-0 lg:pt-0 pt-10">
         <div class="professeurs"><img
               src="../../public/professeur-Romane-DYOT.jpg"
               alt="Professeur Romane Dyot"

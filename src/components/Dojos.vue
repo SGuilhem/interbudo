@@ -1,20 +1,17 @@
 <template>
-  <!-- Desktop -->
-  <div class="container lg:pt-14 py-12" id="dojos">
+  <div class="container lg:pt-14 pt-12 m-auto" id="dojos">
     <h1>Nos Dojos</h1>
-    <div class="flex row justify-center pt-8">
-      <div class="col-xs-12 col-sm-6 col-md-4 bg-white">
-        <div class="thumbnail dojo-caillaux">
-          <a href="./dojos.html#dojo-caillaux"
-            ><img
-              src="../../public/dojo-caillaux.jpg"
-              alt="Photo Dojo Caillaux"
-              width="325px"
-              height="325px"
-          /></a>
+
+    <!-- Desktop layout -->
+    <div v-if="!isMobile" class="flex flex-row justify-center pt-8 gap-10">
+      <div v-for="dojo in dojos" :key="dojo.id">
+        <div class="thumbnail">
+          <a :href="dojo.link">
+            <img :src="dojo.img" :alt="dojo.alt" width="325" height="325" />
+          </a>
           <div class="adresses">
-            <h4>Gymnase Caillaux</h4>
-            <p class="py-4">3 rue Caillaux<br />75013 Paris</p>
+            <h4>{{ dojo.name }}</h4>
+            <p class="py-4" v-html="dojo.address"></p>
             <button
               class="lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
             >
@@ -23,40 +20,27 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 mx-10 bg-white">
-        <div class="thumbnail dojo-stadium">
-          <a href="./dojos.html#dojo-stadium"
-            ><img
-              src="../../public/dojo-stadium.jpg"
-              alt="Photo Dojo Stadium"
-              width="325px"
-              height="325px"
-          /></a>
+    </div>
+
+    <!-- Mobile carousel -->
+    <div
+      v-else
+      class="flex overflow-x-auto gap-6 pt-8 pb-4 px-2 snap-x snap-mandatory scroll-smooth"
+    >
+      <div
+        v-for="dojo in dojos"
+        :key="dojo.id"
+        class="min-w-[85%] bg-white snap-center shrink-0"
+      >
+        <div class="thumbnail">
+          <a :href="dojo.link">
+            <img :src="dojo.img" :alt="dojo.alt" width="325" height="325" />
+          </a>
           <div class="adresses">
-            <h4>Gymnase Stadium</h4>
-            <p class="py-4">66 avenue d’Ivry<br />75013 Paris</p>
+            <h4>{{ dojo.name }}</h4>
+            <p class="py-4" v-html="dojo.address"></p>
             <button
-              class="lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
-            >
-              Plans & Accès
-            </button>
-          </div>
-        </div>
-      </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 bg-white">
-        <div class="thumbnail dojo-charlety">
-          <a href="./dojos.html#dojo-charlety"
-            ><img
-              src="../../public/dojo-charlety.jpg"
-              alt="Photo Dojo Stade Charlety"
-              width="325"
-              height="325"
-          /></a>
-          <div class="adresses">
-            <h4>Stade Charlety</h4>
-            <p class="py-4">3 avenue Pierre de Coubertin<br />75013 Paris</p>
-            <button
-              class="lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+              class="w-full border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
             >
               Plan & Accès
             </button>
@@ -68,79 +52,80 @@
 </template>
 
 <script>
+import dojoCaillaux from "@/assets/dojo-caillaux.jpg";
+import dojoStadium from "@/assets/dojo-stadium.jpg";
+import dojoCharlety from "@/assets/dojo-charlety.jpg";
+
 export default {
-  name: 'Dojos',
+  name: "Dojos",
   data() {
     return {
-      isMobile: null,
-      toggleMobileMenu: false,
-    }
+      isMobile: false,
+      dojos: [
+        {
+          id: 1,
+          name: "Gymnase Caillaux",
+          address: "3 rue Caillaux<br />75013 Paris",
+          img: dojoCaillaux,
+          alt: "Photo Dojo Caillaux",
+          link: "./dojos.html#dojo-caillaux",
+        },
+        {
+          id: 2,
+          name: "Gymnase Stadium",
+          address: "66 avenue d’Ivry<br />75013 Paris",
+          img: dojoStadium,
+          alt: "Photo Dojo Stadium",
+          link: "./dojos.html#dojo-stadium",
+        },
+        {
+          id: 3,
+          name: "Stade Charlety",
+          address: "3 avenue Pierre de Coubertin<br />75013 Paris",
+          img: dojoCharlety,
+          alt: "Photo Dojo Stade Charlety",
+          link: "./dojos.html#dojo-charlety",
+        },
+      ],
+    };
   },
   mounted() {
-    this.isMobile = this.checkIfMobile()
-    window.addEventListener('resize', this.handleResize)
+    this.isMobile = this.checkIfMobile();
+    window.addEventListener("resize", this.handleResize);
   },
-  beforeDestroy() {
-    window.removeEventListener('resize', this.handleResize)
+  beforeUnmount() {
+    window.removeEventListener("resize", this.handleResize);
   },
   methods: {
     handleResize() {
-      const newIsMobile = this.checkIfMobile()
-      if (newIsMobile !== this.isMobile) {
-        this.isMobile = newIsMobile
-      }
+      this.isMobile = this.checkIfMobile();
     },
     checkIfMobile() {
-      return window.innerWidth <= 1024
+      return window.innerWidth <= 1024;
     },
   },
-}
+};
 </script>
 
 <style scoped>
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-}
-
 h4 {
   font-size: 30px;
-  color: #D74340;
+  color: #d74340;
   padding-top: 16px;
 }
 .adresses {
-font-size: 18px;
-font-weight: 300;
+  font-size: 18px;
+  font-weight: 300;
 }
-
 button {
-  width: 80%;
   font-size: 20px;
 }
 button:hover {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
 }
-
 .thumbnail {
-  padding: 50px;
+  padding: 40px;
   text-align: center;
   border-radius: 0px;
   border: 1px solid #cdced0;
