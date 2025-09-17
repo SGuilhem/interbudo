@@ -20,7 +20,7 @@
     </div>
 
      <!-- Version desktop Planning -->
-    <div v-if="viewMode === 'planning' && !isMobile" class="overflow-x-auto mt-10">
+    <div v-if="planningIsSelected && !isMobile" class="overflow-x-auto mt-10">
       <table class="w-full border-collapse border border-gray-300 text-center">
         <thead>
           <tr class="bg-gray-100">
@@ -123,11 +123,11 @@
     </div>
 
     <!-- Vue Texte -->
-    <div v-else class="grid md:grid-cols-2 gap-6 mt-10">
+    <div v-if="textIsSelected" class="grid md:grid-cols-2 gap-6 mt-10">
       <div
         v-for="(cours, index) in textData"
         :key="index"
-        class="p-4 border rounded-lg shadow-sm bg-white"
+        class="p-4 shadow-sm bg-white"
       >
         <h3 class="text-lg font-bold">{{ cours.title }}</h3>
         <p v-if="cours.age" class="italic text-gray-600">{{ cours.age }}</p>
@@ -158,6 +158,8 @@ export default {
       toggleMobileMenu: false,
       viewMode: 'planning',
       isSelected: null,
+      textIsSelected: false,
+      planningIsSelected: true,
       currentIndex: 0,
 
       // Planning Desktop

@@ -1,8 +1,7 @@
 <template>
   <div class="container lg:pt-14 pt-12 m-auto" id="dojos">
     <h1>Nos Dojos</h1>
-
-    <!-- Desktop layout -->
+    <!-- Desktop -->
     <div v-if="!isMobile" class="flex flex-row justify-center pt-8 gap-10">
       <div v-for="dojo in dojos" :key="dojo.id">
         <div class="thumbnail">
@@ -22,17 +21,13 @@
       </div>
     </div>
 
-    <!-- Mobile carousel -->
-    <div
-      v-else
-      class="flex overflow-x-auto gap-6 pt-8 pb-4 px-2 snap-x snap-mandatory scroll-smooth"
-    >
-      <div
+    <!-- Mobile -->
+      <div v-if="isMobile"
         v-for="dojo in dojos"
         :key="dojo.id"
-        class="min-w-[85%] bg-white snap-center shrink-0"
+        class="min-w-[85%] bg-white shrink-0 relative"
       >
-        <div class="thumbnail">
+        <div :class="`thumbnail ${dojo.id === 2 ? 'my-10' : ''}`">
           <a :href="dojo.link">
             <img :src="dojo.img" :alt="dojo.alt" width="325" height="325" />
           </a>
@@ -48,7 +43,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -108,6 +102,12 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
 h4 {
   font-size: 30px;
   color: #d74340;
