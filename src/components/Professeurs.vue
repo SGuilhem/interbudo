@@ -1,8 +1,7 @@
 <template>
-  <!-- Desktop -->
   <div class="container lg:pt-14 py-12" id="professeurs">
     <h1>Les Professeurs</h1>
-    <div class="flex lg:flex-row flex-col justify-center pt-8">
+    <div class="flex lg:flex-row flex-col justify-center lg:pt-4 pt-8">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="professeurs"><img
               src="../../public/professeur-charly.jpg"

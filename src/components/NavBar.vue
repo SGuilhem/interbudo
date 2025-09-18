@@ -24,20 +24,24 @@
       <img src="/InterbudoLogo.png" class="m-auto size-48 py-4" />
 
       <ul class="text-center flex flex-col font-semibold pt-8 items-center pb-32">
-        <li
-          v-for="link in links"
-          :key="link.id"
-          class="lg:w-full border-2 btn-menu text-white p-4 w-3/4 rounded-md text-center mt-2 transition-transform duration-200 hover:bg-blue-700 hover:scale-105 active:scale-95 cursor-pointer"
-          @click="handleClick(link)"
-        >
-          {{ link.label }}
+        <li v-for="link in links" :key="link.id" class="lg:w-full w-3/4 mt-2">
+          <router-link
+            :to="link.to"
+            class="block border-2 btn-menu text-white p-4 rounded-md text-center transition-transform duration-200 hover:bg-blue-700 hover:scale-105 active:scale-95 cursor-pointer"
+            @click.native="closeMenu"
+          >
+            {{ link.label }}
+          </router-link>
         </li>
       </ul>
     </div>
   </div>
 
   <!-- Desktop -->
-  <nav v-show="!isMobile" class="bg-white shadow-md fixed top-0 left-0 w-full z-50 h-14 content-center">
+  <nav
+    v-show="!isMobile"
+    class="bg-white shadow-md fixed top-0 left-0 w-full z-50 h-14 content-center"
+  >
     <ul class="flex items-center justify-center gap-6">
       <!-- Logo -->
       <li>
@@ -48,9 +52,9 @@
 
       <!-- Boucle sur les liens -->
       <li v-for="link in links" :key="link.id">
-        <a :href="link.href" class="nav-link font-bold text-gray-500">
+        <router-link :to="link.to" class="nav-link font-bold text-gray-500">
           {{ link.label }}
-        </a>
+        </router-link>
       </li>
     </ul>
   </nav>
@@ -64,15 +68,15 @@ export default {
       isMobile: null,
       toggleMobileMenu: false,
       links: [
-        { id: 1, label: 'Interbudo', href: '#description' },
-        { id: 2, label: 'Dojos', href: '#dojos' },
-        { id: 3, label: 'Professeurs', href: '#professeurs' },
-        { id: 4, label: 'Dirigeants', href: '#dirigeants' },
-        { id: 5, label: 'Horaires', href: '#horaires' },
-        { id: 6, label: 'Tarifs', href: '#tarifs' },
-        { id: 7, label: 'Inscription', href: '#inscription' },
-        { id: 8, label: 'Photos', href: '#calendrier' },
-        { id: 9, label: 'Partenaires', href: '#contacts' },
+        { id: 1, label: 'Interbudo', to: '/#description' },
+        { id: 2, label: 'Dojos', to: '/#dojos' },
+        { id: 3, label: 'Professeurs', to: '/#professeurs' },
+        { id: 4, label: 'Dirigeants', to: '/#dirigeants' },
+        { id: 5, label: 'Horaires', to: '/#horaires' },
+        { id: 6, label: 'Tarifs', to: '/#tarifs' },
+        { id: 7, label: 'Inscription', to: '/#inscription' },
+        { id: 8, label: 'Photos', to: '/#calendrier' },
+        { id: 9, label: 'Partenaires', to: '/#contacts' },
       ],
     }
   },
@@ -121,7 +125,7 @@ export default {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background-color: #D74340;
+  background-color: #d74340;
   transform: scaleX(0);
   transform-origin: right;
   transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
@@ -153,7 +157,7 @@ export default {
 }
 
 .btn-menu {
-background-color: #d9534f;
-border-color: #d43f3a;
+  background-color: #d9534f;
+  border-color: #d43f3a;
 }
 </style>

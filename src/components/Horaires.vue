@@ -1,10 +1,10 @@
 <template>
   <!-- Desktop -->
   <div class="container lg:pt-14 py-12" id="horaires">
-    <h1 class="text-2xl font-bold text-center">Horaires</h1>
+    <h1>Horaires</h1>
 
     <!-- Boutons de sélection -->
-    <div class="flex justify-center gap-4 pt-8">
+    <div class="flex justify-center gap-4 lg:pt-4 pt-8">
       <button
          @click="selectPlanningView"
         :class="`lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer ${ planningIsSelected ? 'bg-red-custom border-red-custom text-white' : '' }`"
@@ -20,7 +20,7 @@
     </div>
 
      <!-- Version desktop Planning -->
-    <div v-if="planningIsSelected && !isMobile" class="overflow-x-auto mt-10">
+    <div v-if="planningIsSelected && !isMobile" class="overflow-x-auto pt-4">
       <table class="w-full border-collapse border border-gray-300 text-center">
         <thead>
           <tr class="bg-gray-100">
@@ -55,8 +55,7 @@
     </div>
 
     <!-- Version mobile Planning -->
-    <div v-if="viewMode === 'planning' && isMobile" class="mt-10">
-      <div v-if="viewMode === 'planning' && isMobile" class="mt-10 relative">
+      <div v-if="viewMode === 'planning' && isMobile" class="pt-8 relative">
     <div
       v-if="currentIndex > 0"
       class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full p-2 shadow-md"
@@ -87,7 +86,7 @@
       @slideChange="onSlideChange"
     >
       <swiper-slide v-for="(day, i) in planningByDay" :key="i">
-        <div class="p-4 border rounded-lg shadow-sm bg-white">
+        <div class="p-4 shadow-sm bg-white">
           <h2 class="text-lg font-bold text-center mb-4">{{ day.name }}</h2>
           <div
             v-for="(cours, j) in day.courses"
@@ -120,10 +119,9 @@
       </swiper-slide>
     </swiper>
   </div>
-    </div>
 
     <!-- Vue Texte -->
-    <div v-if="textIsSelected" class="grid md:grid-cols-2 gap-6 mt-10">
+    <div v-if="textIsSelected" class="grid md:grid-cols-2 gap-6 pt-8">
       <div
         v-for="(cours, index) in textData"
         :key="index"

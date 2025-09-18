@@ -1,8 +1,7 @@
 <template>
   <div class="container lg:pt-14 pt-12 m-auto" id="inscription">
     <h1>Inscription au Club</h1>
-    <!-- Desktop layout -->
-    <div class="py-4">
+    <div class="pt-8 lg:pt-4">
       <div class="container bg-white">
         <div class="text-base font-medium text-gray-700 p-B4 text-center">
           <p class="font-bold">Pour vous inscrire:</p>

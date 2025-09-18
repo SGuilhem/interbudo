@@ -2,7 +2,7 @@
   <!-- Desktop -->
   <div class="container lg:pt-14 py-12" id="dirigeants">
     <h1>Équipe Dirigeante</h1>
-    <div class="flex flex-wrap flex-col lg:flex-row justify-center gap-8 pt-8">
+    <div class="flex flex-wrap flex-col lg:flex-row justify-center gap-8 lg:pt-4 pt-8">
       <!-- Carte -->
       <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
         <img

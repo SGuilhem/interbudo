@@ -21,8 +21,8 @@
 
 
     <!-- Mobile -->
-    <div v-if="isMobile" v-for="tarif in tarifs" :key="tarif.id" class="min-w-[85%] bg-white shrink-0 relative">
-      <div class="card my-10">
+    <div v-if="isMobile" v-for="tarif in tarifs" :key="tarif.id" class="min-w-[85%] shrink-0 relative pt-8">
+      <div class="card">
         <div>
           <h4 class="panel-heading py-2">{{ tarif.title }}</h4>
           <p class="py-4 text-xl font-medium text-gray-700" v-html="tarif.age"></p>

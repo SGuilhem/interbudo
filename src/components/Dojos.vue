@@ -2,20 +2,21 @@
   <div class="container lg:pt-14 pt-12 m-auto" id="dojos">
     <h1>Nos Dojos</h1>
     <!-- Desktop -->
-    <div v-if="!isMobile" class="flex flex-row justify-center pt-8 gap-10">
+    <div v-if="!isMobile" class="flex flex-row justify-center pt-4 gap-10">
       <div v-for="dojo in dojos" :key="dojo.id">
         <div class="thumbnail">
-          <a :href="dojo.link">
+          <router-link :to="dojo.link">
             <img :src="dojo.img" :alt="dojo.alt" width="325" height="325" />
-          </a>
+          </router-link>
           <div class="adresses">
             <h4>{{ dojo.name }}</h4>
-            <p class="py-4" v-html="dojo.address"></p>
-            <button
-              class="lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+            <p class="py-4 mb-4" v-html="dojo.address"></p>
+            <router-link
+              class="border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+              to="./dojos"
             >
               Plan & Accès
-            </button>
+            </router-link>
           </div>
         </div>
       </div>
@@ -25,7 +26,7 @@
       <div v-if="isMobile"
         v-for="dojo in dojos"
         :key="dojo.id"
-        class="min-w-[85%] bg-white shrink-0 relative"
+        class="min-w-[85%] shrink-0 relative pt-8"
       >
         <div :class="`thumbnail ${dojo.id === 2 ? 'my-10' : ''}`">
           <a :href="dojo.link">
@@ -62,7 +63,7 @@ export default {
           address: "3 rue Caillaux<br />75013 Paris",
           img: dojoCaillaux,
           alt: "Photo Dojo Caillaux",
-          link: "./dojos.html#dojo-caillaux",
+          link: "./dojos",
         },
         {
           id: 2,
@@ -70,7 +71,7 @@ export default {
           address: "66 avenue d’Ivry<br />75013 Paris",
           img: dojoStadium,
           alt: "Photo Dojo Stadium",
-          link: "./dojos.html#dojo-stadium",
+          link: "./dojos",
         },
         {
           id: 3,
@@ -78,7 +79,7 @@ export default {
           address: "3 avenue Pierre de Coubertin<br />75013 Paris",
           img: dojoCharlety,
           alt: "Photo Dojo Stade Charlety",
-          link: "./dojos.html#dojo-charlety",
+          link: "./dojos",
         },
       ],
     };
