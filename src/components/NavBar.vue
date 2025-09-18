@@ -70,7 +70,7 @@ export default {
         { id: 4, label: 'Dirigeants', href: '#dirigeants' },
         { id: 5, label: 'Horaires', href: '#horaires' },
         { id: 6, label: 'Tarifs', href: '#tarifs' },
-        { id: 7, label: 'Inscriptions', href: '#inscription' },
+        { id: 7, label: 'Inscription', href: '#inscription' },
         { id: 8, label: 'Photos', href: '#calendrier' },
         { id: 9, label: 'Partenaires', href: '#contacts' },
       ],
