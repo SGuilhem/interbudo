@@ -6,24 +6,6 @@
       <!-- Carte -->
       <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
         <img
-          src="/dirigeant-guillaume-uzan.jpg"
-          alt="Trésorier Guillaume Uzan"
-          class="w-72 h-72 object-contain"
-        />
-        <div class="mt-4 text-center">
-          <h4>Guillaume UZAN</h4>
-          <p class="text-gray-600">Trésorier</p>
-          <a
-            href="mailto:guillaume.uzan@orange.fr?subject=Contact Interbudo"
-            class="text-blue-600 underline"
-          >
-            guillaume.uzan@orange.fr
-          </a>
-          <p class="text-gray-800 mt-1">06 80 82 14 60</p>
-        </div>
-      </div>
-      <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
-        <img
           src="/dirigeant-caroline-masini.jpg"
           alt="Présidente Caroline Masini"
           class="w-72 h-72 object-contain"
@@ -56,6 +38,24 @@
             wablecharly@gmail.com
           </a>
           <p class="text-gray-800 mt-1">06 59 82 71 43</p>
+        </div>
+      </div>
+      <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
+        <img
+          src="/dirigeant-guillaume-uzan.jpg"
+          alt="Trésorier Guillaume Uzan"
+          class="w-72 h-72 object-contain"
+        />
+        <div class="mt-4 text-center">
+          <h4>Guillaume UZAN</h4>
+          <p class="text-gray-600">Trésorier</p>
+          <a
+            href="mailto:guillaume.uzan@orange.fr?subject=Contact Interbudo"
+            class="text-blue-600 underline"
+          >
+            guillaume.uzan@orange.fr
+          </a>
+          <p class="text-gray-800 mt-1">06 80 82 14 60</p>
         </div>
       </div>
       <!-- Répéter pour les autres cartes... -->
