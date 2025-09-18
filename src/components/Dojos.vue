@@ -11,11 +11,13 @@
           <div class="adresses">
             <h4>{{ dojo.name }}</h4>
             <p class="py-4 mb-4" v-html="dojo.address"></p>
-            <router-link
-              class="border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
-              to="./dojos"
+            <router-link 
+              :to="dojo.link">
+              <button
+              class="border-2 border-gray-200 bg-red-custom p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
             >
               Plan & Accès
+              </button>
             </router-link>
           </div>
         </div>
@@ -35,11 +37,12 @@
           <div class="adresses">
             <h4>{{ dojo.name }}</h4>
             <p class="py-4" v-html="dojo.address"></p>
-            <button
-              class="w-full border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+            <router-link
+              class="w-full block border-2 bg-red-custom border-gray-200  p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+              :to="dojo.link"
             >
               Plan & Accès
-            </button>
+            </router-link>
           </div>
         </div>
       </div>

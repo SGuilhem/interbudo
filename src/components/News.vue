@@ -21,12 +21,12 @@
     </p>
       <div class="justify-self-center">
         <button
-          class="lg:mr-4 mr-0 border-2 text-lg border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+          class="lg:mr-4 mr-0 border-2 text-lg border-gray-200 bg-red-custom text-gray-900 p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
         >
           Télécharger la description des nouveaux équipements du club
         </button>
         <button
-          class="lg:ml-4 ml-0 border-2 text-lg border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+          class="lg:ml-4 ml-0 border-2 text-lg border-gray-200 bg-red-custom text-gray-900 p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
         >
           Télécharger le bulletin de commande des nouveaux équipements du club
         </button>
