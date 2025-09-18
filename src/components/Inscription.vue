@@ -18,11 +18,11 @@
             </div>
             <div>
               <button
-                class="ml-0 border-2 text-lg bg-red-custom text-gray-800 border-gray-200 py-2 px-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+                class="ml-0 border-2 text-lg bg-red-custom text-gray-800 border-gray-200 py-2 px-4 rounded-md text-center lg:mt-2 lg:my-0 my-4 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
               >
                 Télécharger le dossier d'inscription
               </button>
-              <p class="mt-4 font-bold">
+              <p class="lg:mt-4 mt-2 font-bold">
                 Joindre soit un certificat médical soit une attestation relatif à l'état de santé
                 mineur/majeur :
               </p>
