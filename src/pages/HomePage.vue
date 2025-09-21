@@ -8,6 +8,8 @@
     <Tarifs />
     <Inscription />
     <Calendrier />
+    <TextesOfficiels />
+    <Contacts />
   </div>
 </template>
 
@@ -20,4 +22,6 @@ import Horaires from '@/components/Horaires.vue'
 import Tarifs from '@/components/Tarifs.vue'
 import Inscription from '@/components/Inscription.vue'
 import Calendrier from '@/components/Calendrier.vue'
+import TextesOfficiels from '@/components/TextesOfficiels.vue'
+import Contacts from '@/components/Contacts.vue'
 </script>

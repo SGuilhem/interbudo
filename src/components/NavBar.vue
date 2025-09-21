@@ -76,9 +76,9 @@ export default {
         { id: 6, label: 'Tarifs', to: '/#tarifs' },
         { id: 7, label: 'Inscription', to: '/#inscription' },
         { id: 8, label: 'Calendrier', to: '/#calendrier' },
-        { id: 9, label: 'Photos', to: '/#photos' },
+        { id: 9, label: 'Photos', to: './photos' },
         { id: 10, label: 'Contacts', to: '/#contacts' },
-        { id: 11, label: 'Partenaires', to: '/#partenaires' },
+        { id: 11, label: 'Partenaires', to: './partenaires' },
       ],
     }
   },
