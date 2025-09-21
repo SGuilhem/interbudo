@@ -6,7 +6,7 @@
       <!-- Carte -->
       <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
         <img
-          src="/dirigeant-caroline-masini.jpg"
+          src="../../src/assets/dirigeant-caroline-masini.jpg"
           alt="Présidente Caroline Masini"
           class="w-72 h-72 object-contain"
         />
@@ -24,7 +24,7 @@
       </div>
       <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
         <img
-          src="/professeur-charly.jpg"
+          src="../../src/assets/professeur-charly.jpg"
           alt="Professeur Charly Wable"
           class="w-72 h-72 object-contain"
         />
@@ -42,7 +42,7 @@
       </div>
       <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
         <img
-          src="/dirigeant-guillaume-uzan.jpg"
+          src="../../src/assets/dirigeant-guillaume-uzan.jpg"
           alt="Trésorier Guillaume Uzan"
           class="w-72 h-72 object-contain"
         />

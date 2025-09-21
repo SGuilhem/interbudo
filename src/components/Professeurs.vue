@@ -4,7 +4,7 @@
     <div class="flex lg:flex-row flex-col justify-center lg:pt-4 pt-8">
       <div class="col-xs-12 col-sm-6 col-md-4">
         <div class="professeurs"><img
-              src="../../public/professeur-charly.jpg"
+              src="../../src/assets/professeur-charly.jpg"
               alt="Professeur Charly Wable"
               width="450px"
               height="450px"
@@ -24,7 +24,7 @@
       </div>
       <div class="col-xs-12 col-sm-6 col-md-4 lg:mx-10 mx-0 lg:pt-0 pt-10">
         <div class="professeurs"><img
-              src="../../public/professeur-Romane-DYOT.jpg"
+              src="../../src/assets/professeur-Romane-DYOT.jpg"
               alt="Professeur Romane Dyot"
               width="268px"
               height="268px"
