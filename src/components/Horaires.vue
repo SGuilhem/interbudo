@@ -104,7 +104,13 @@ Avec ce code ci: "
         <div
           ref="slider"
           class="flex transition-transform duration-500 ease-in-out gap-5"
-          :style="{ transform: `translateX(-${currentIndex * (cardWidth + 20)}px)`, paddingLeft: sideGap + 'px'  }"
+          :style="{
+            transform: `translateX(-${currentIndex * (cardWidth + 20)}px)`,
+            paddingLeft: sideGap + 'px',
+          }"
+          @touchstart="onTouchStart"
+          @touchmove="onTouchMove"
+          @touchend="onTouchEnd"
         >
           <div
             v-for="(day, i) in mobilePlanning"
