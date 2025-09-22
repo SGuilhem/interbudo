@@ -46,7 +46,12 @@ Avec ce code ci: "
                 <h3 class="font-semibold">{{ cell.title }}</h3>
                 <p>{{ cell.time }}</p>
                 <p>{{ cell.prof }}</p>
-                <a :href="getGymLink(cell.gym)" class="text-blue-600 underline"> {{ cell.gym }}</a>
+                <router-link
+                  :to="{ path: '/dojos', hash: getGymHash(cell.gym) }"
+                  class="text-blue-600 underline"
+                >
+                  {{ cell.gym }}
+                </router-link>
               </div>
             </td>
           </tr>
@@ -126,9 +131,12 @@ Avec ce code ci: "
                 <h3 class="font-semibold">{{ cours.title }}</h3>
                 <p>{{ cours.time }}</p>
                 <p>{{ cours.prof }}</p>
-                <a :href="getGymLink(cours.gym)" class="text-blue-600 underline">
+                <router-link
+                  :to="{ path: '/dojos', hash: getGymHash(cours.gym) }"
+                  class="text-blue-600 underline"
+                >
                   {{ cours.gym }}
-                </a>
+                </router-link>
               </div>
             </div>
           </div>
@@ -144,7 +152,12 @@ Avec ce code ci: "
         <div v-for="(seance, i) in cours.courses" :key="i" class="mt-2">
           <p>- {{ seance.day }} de {{ seance.time }}</p>
           <p>
-            <a :href="getGymLink(seance.gym)" class="text-blue-600 underline"> {{ seance.gym }}</a>
+            <router-link
+              :to="{ path: '/dojos', hash: getGymHash(seance.gym) }"
+              class="text-blue-600 underline"
+            >
+              {{ seance.gym }}
+            </router-link>
           </p>
           <p v-if="seance.prof">{{ seance.prof }}</p>
         </div>
@@ -511,28 +524,28 @@ export default {
       }
     },
     onTouchStart(e) {
-    this.touchStartX = e.touches[0].clientX
-  },
-  onTouchEnd(e) {
-    const touchEndX = e.changedTouches[0].clientX
-    const swipeDistance = this.touchStartX - touchEndX
+      this.touchStartX = e.touches[0].clientX
+    },
+    onTouchEnd(e) {
+      const touchEndX = e.changedTouches[0].clientX
+      const swipeDistance = this.touchStartX - touchEndX
 
-    if (swipeDistance > this.threshold && this.currentIndex < this.mobilePlanning.length - 1) {
-      this.currentIndex++
-    } else if (swipeDistance < -this.threshold && this.currentIndex > 0) {
-      this.currentIndex--
-    }
-  },
-    getGymLink(gym) {
+      if (swipeDistance > this.threshold && this.currentIndex < this.mobilePlanning.length - 1) {
+        this.currentIndex++
+      } else if (swipeDistance < -this.threshold && this.currentIndex > 0) {
+        this.currentIndex--
+      }
+    },
+    getGymHash(gym) {
       switch (gym) {
         case 'Gymnase Caillaux':
-          return './dojos#caillaux'
+          return '#caillaux'
         case 'Gymnase Stadium':
-          return './dojos#stadium'
+          return '#stadium'
         case 'Stade Charlety':
-          return './dojos#charlety'
+          return '#charlety'
         default:
-          return './dojos'
+          return ''
       }
     },
   },
