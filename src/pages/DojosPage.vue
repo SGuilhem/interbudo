@@ -3,7 +3,16 @@
     <h1>Nos Dojos</h1>
     <div class="flex flex-col justify-center pt-4 gap-10">
       <div v-for="dojo in dojos" :key="dojo.id">
-        <div class="thumbnail flex lg:flex-row flex-col">
+        <div
+          class="thumbnail flex lg:flex-row flex-col"
+          :id="
+            dojo.name === 'Gymnase Caillaux'
+              ? 'caillaux'
+              : dojo.name === 'Gymnase Stadium'
+                ? 'stadium'
+                : 'charlety'
+          "
+        >
           <div>
             <a :href="dojo.link" target="_blank" rel="noopener noreferrer">
               <img :src="dojo.img" :alt="dojo.alt" />
@@ -76,7 +85,7 @@ export default {
   mounted() {
     this.isMobile = this.checkIfMobile()
     window.addEventListener('resize', this.handleResize)
-    console.log('dojo[1].link: ', this.dojos[1].link)
+    this.scrollToHash()
   },
   beforeUnmount() {
     window.removeEventListener('resize', this.handleResize)
@@ -87,6 +96,16 @@ export default {
     },
     checkIfMobile() {
       return window.innerWidth <= 1024
+    },
+    scrollToHash() {
+      const hash = window.location.hash
+      if (hash) {
+        // enlever le '#' et trouver l'élément
+        const el = document.querySelector(hash)
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        }
+      }
     },
   },
 }

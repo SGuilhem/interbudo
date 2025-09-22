@@ -99,8 +99,8 @@ export default {
   padding: 30px;
   margin-right: auto;
   margin-left: auto;
-  @media screen { max-width: 768px;
-    padding: 20px
+  @media (max-width: 1024px) {
+    padding: 20px;
   }
 }
 </style>
