@@ -3,7 +3,9 @@ Avec ce code ci: "
   <!-- Desktop -->
   <div class="container lg:pt-14 py-12" id="horaires">
     <h1>Horaires</h1>
-    <div class="flex justify-center font-semibold text-xl text-gray-800 pt-4">Format à afficher:</div>
+    <div class="flex justify-center font-semibold text-xl text-gray-800 pt-4">
+      Format à afficher:
+    </div>
 
     <!-- Boutons de sélection -->
     <div class="flex justify-center gap-4 lg:pt-4 pt-4">
@@ -55,6 +57,7 @@ Avec ce code ci: "
     <!-- Version mobile Planning -->
     <div class="relative w-full overflow-hidden pt-8">
       <div v-if="viewMode === 'planning' && isMobile" class="pt-8 relative">
+        <!-- Flèches -->
         <div
           v-if="currentIndex > 0"
           class="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 rounded-full p-2 shadow-md"
@@ -100,33 +103,27 @@ Avec ce code ci: "
         <!-- Slider -->
         <div
           ref="slider"
-          class="flex transition-transform duration-500 ease-in-out"
-          :style="{ transform: sliderTransform() }"
-          @touchstart="onTouchStart"
-          @touchmove="onTouchMove"
-          @touchend="onTouchEnd"
+          class="flex transition-transform duration-500 ease-in-out gap-5"
+          :style="{ transform: `translateX(-${currentIndex * (cardWidth + 20)}px)`, paddingLeft: sideGap + 'px'  }"
         >
           <div
             v-for="(day, i) in mobilePlanning"
             :key="i"
             class="flex-shrink-0"
-            :style="{
-              width: cardWidth + 'px',
-              margin: '0 ' + sideGap + 'px',
-            }"
+            :style="{ width: cardWidth + 'px' }"
           >
             <div class="p-4 shadow-sm bg-white rounded-lg">
               <h2 class="text-lg font-bold text-center mb-4">{{ day.name }}</h2>
               <div v-for="(cours, j) in day.courses" :key="j" class="mb-4 border-b pb-2">
-                <p v-show="cours.regroupement" class="text-lg font-bold text-center mb-4">
+                <p v-if="cours.regroupement" class="text-lg font-bold text-center mb-4">
                   {{ cours.titleBis }}
                 </p>
                 <h3 class="font-semibold">{{ cours.title }}</h3>
                 <p>{{ cours.time }}</p>
                 <p>{{ cours.prof }}</p>
                 <a :href="getGymLink(cours.gym)" class="text-blue-600 underline">
-                  {{ cours.gym }}</a
-                >
+                  {{ cours.gym }}
+                </a>
               </div>
             </div>
           </div>
@@ -451,8 +448,12 @@ export default {
   },
   mounted() {
     this.isMobile = this.checkIfMobile()
+    this.viewportWidth = window.innerWidth
     window.addEventListener('resize', this.handleResize)
-    this.updateCardWidth()
+    this.$nextTick(() => {
+      this.updateCardWidth()
+    })
+
     window.addEventListener('resize', this.updateCardWidth)
   },
   beforeUnmount() {
@@ -461,10 +462,12 @@ export default {
   },
   methods: {
     handleResize() {
+      this.viewportWidth = window.innerWidth
       const newIsMobile = this.checkIfMobile()
       if (newIsMobile !== this.isMobile) {
         this.isMobile = newIsMobile
       }
+      this.updateCardWidth()
     },
     checkIfMobile() {
       return window.innerWidth <= 1024
@@ -480,14 +483,14 @@ export default {
       this.textIsSelected = false
     },
     updateCardWidth() {
-      this.cardWidth = Math.floor(window.innerWidth * 0.73)
-      this.sideGap = Math.floor(window.innerWidth * 0.02)
+      const width = window.innerWidth
+      this.cardWidth = Math.floor(width * 0.75)
+      this.sideGap = Math.floor(width * 0.09)
     },
     sliderTransform() {
-      const slideSize = this.cardWidth + this.sideGap * 1
-      const containerWidth = window.innerWidth
-      const offset = (containerWidth - this.cardWidth) / 4
-
+      const slideSize = this.cardWidth + this.sideGap
+      const offset =
+        this.currentIndex === 0 ? this.sideGap : (this.viewportWidth - this.cardWidth) / 2
       return `translateX(${offset - this.currentIndex * slideSize}px)`
     },
     slideToNext() {
