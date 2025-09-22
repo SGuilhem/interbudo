@@ -20,7 +20,7 @@
       également une toute nouvelle offre d’équipements avec les boutons ci-dessous pour découvrir et
       commander:
     </p>
-    <div class="justify-self-center">
+    <div class="justify-self-center lg:px-0 px-8">
       <button
         class="lg:mr-4 mr-0 border-2 text-lg border-gray-200 bg-red-custom text-gray-900 p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
       >
@@ -37,7 +37,7 @@
       et un événement surprise viendra célébrer avec panache cet anniversaire, mais, chut, une
       surprise doit être gardée secrète ! Au plaisir de nous retrouver sur les tatamis et en dehors.
     </p>
-    <p class="pt-6 pr-12 lg:text-right underline">Caroline présidente du club.</p>
+    <p class="pt-6 lg:pr-12 pr-0 italic text-right font-medium">Caroline présidente du club.</p>
     <p class="pt-10">
       INTERBUDO termine 3éme au championnat de Paris de judo par équipes vendredi 18 octobre 2024. <br /> Pour plus d'informations n'hésitez pas à nous contacter avec nos coordonnées de la page "Dirigeants"
     </p>
@@ -99,7 +99,7 @@ export default {
   }
 }
 .news-content {
-  padding: 40px;
+  padding: 20px;
   border-radius: 0px;
   border: 1px solid #cdced0;
   background: #fff;
