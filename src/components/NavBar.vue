@@ -1,7 +1,7 @@
 <template>
   <!-- Mobile NavBar -->
   <div v-show="isMobile" class="bg-white shadow-md fixed top-0 left-0 h-16 content-center w-full z-50">
-    <div class="hamburger custom-bg-blue text-white z-10">
+    <div class="hamburger text-white z-10">
       <div class="flex items-center w-full relative">
         <img
           src="/svg/hamburger.svg"
@@ -15,19 +15,24 @@
   </div>
 
   <!-- Mobile Menu -->
-  <div v-show="isMobile && toggleMobileMenu" class="bg-gray-200 text-white side-menu-mobile">
-    <button @click="closeMenu" class="absolute p-4 right-4 z-50 text-white text-xl">
+<transition name="slide-down">
+  <nav
+    v-if="toggleMobileMenu"
+    class="side-menu-mobile bg-beige"
+  >
+  <button @click="closeMenu" class="absolute right-4 top-2 z-50 text-white text-xl">
       <img src="/svg/cross-close.svg" alt="Fermer" class="w-12 h-12 text-right" />
     </button>
-
-    <div class="align-center mobile-container">
-      <img src="/InterbudoLogo.png" class="m-auto size-48 py-4" />
-
-      <ul class="text-center flex flex-col font-semibold pt-8 items-center pb-32">
-        <li v-for="link in links" :key="link.id" class="lg:w-full w-3/4 mt-2">
+    <div class="mobile-container w-full">
+      <ul class="divide-y divide-gray-400 text-lg font-medium w-full">
+        <li
+          v-for="link in links"
+          :key="link.id"
+          class="w-full"
+        >
           <router-link
             :to="link.to"
-            class="block border-2 btn-menu text-white p-4 rounded-md text-center transition-transform duration-200 hover:bg-blue-700 hover:scale-105 active:scale-95 cursor-pointer"
+            class="block py-4 text-gray-800 transition-colors"
             @click.native="closeMenu"
           >
             {{ link.label }}
@@ -35,7 +40,10 @@
         </li>
       </ul>
     </div>
-  </div>
+  </nav>
+</transition>
+
+
 
   <!-- Desktop -->
   <nav
@@ -142,24 +150,53 @@ export default {
   position: sticky;
   top: 0;
 }
-.side-menu-mobile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  color: white;
-  text-align: center;
-  z-index: 100;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.mobile-container {
-  margin-top: 15%;
-}
 
 .btn-menu {
   background-color: #d9534f;
   border-color: #d43f3a;
 }
+
+/* Animation slide down */
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.slide-down-enter-from {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.slide-down-enter-to {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slide-down-leave-from {
+  transform: translateY(0);
+  opacity: 1;
+}
+.slide-down-leave-to {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+/* Menu mobile */
+.side-menu-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(233, 231, 231);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.mobile-container {
+  width: 100%;
+}
+
+
 </style>
