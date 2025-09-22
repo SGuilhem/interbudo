@@ -112,7 +112,7 @@ Avec ce code ci: "
             class="flex-shrink-0"
             :style="{ width: cardWidth + 'px' }"
           >
-            <div class="p-4 shadow-sm bg-white rounded-lg">
+            <div class="p-4 shadow-sm bg-white">
               <h2 class="text-lg font-bold text-center mb-4">{{ day.name }}</h2>
               <div v-for="(cours, j) in day.courses" :key="j" class="mb-4 border-b pb-2">
                 <p v-if="cours.regroupement" class="text-lg font-bold text-center mb-4">
