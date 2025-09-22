@@ -1,6 +1,6 @@
 <template>
   <!-- Desktop -->
-  <div class="container lg:pt-14 pt-16" id="description">
+  <div class="container lg:pt-12 pt-16" id="description">
     <h1>News</h1>
     <div class="news-content">
     <p class="lg:mx-0 mx-2 text-md lg:pt-4 pt-0">

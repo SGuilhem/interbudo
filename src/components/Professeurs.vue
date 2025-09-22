@@ -75,27 +75,6 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  margin-right: auto;
-  margin-left: auto;
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
-  }
-}
-
-
 h4 {
   font-size: 30px;
   color: #D74340;

@@ -1,5 +1,5 @@
 <template>
-  <div class="container lg:w-3/5 lg:pt-14 pt-16">
+  <div class="container lg:w-3/5 lg:pt-12 pt-16">
     <h1>Nos Dojos</h1>
     <div class="flex flex-col justify-center gap-10">
       <div v-for="dojo in dojos" :key="dojo.id">
