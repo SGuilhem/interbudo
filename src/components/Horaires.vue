@@ -109,7 +109,6 @@ Avec ce code ci: "
             paddingLeft: sideGap + 'px',
           }"
           @touchstart="onTouchStart"
-          @touchmove="onTouchMove"
           @touchend="onTouchEnd"
         >
           <div
@@ -170,6 +169,8 @@ export default {
       currentIndex: 0,
       cardWidth: 0,
       sideGap: 0,
+      touchStartX: 0,
+      threshold: 30,
       // Planning Desktop
       desktopPlanning: [
         // Rangée 1
@@ -510,22 +511,18 @@ export default {
       }
     },
     onTouchStart(e) {
-      this.touchStartX = e.touches[0].clientX
-    },
-    onTouchMove(e) {
-      this.touchEndX = e.touches[0].clientX
-    },
-    onTouchEnd() {
-      const swipeDistance = this.touchStartX - this.touchEndX
-      const threshold = 50
-      if (swipeDistance > threshold) {
-        this.slideToNext()
-      } else if (swipeDistance < -threshold) {
-        this.slideToPrevious()
-      }
-      this.touchStartX = 0
-      this.touchEndX = 0
-    },
+    this.touchStartX = e.touches[0].clientX
+  },
+  onTouchEnd(e) {
+    const touchEndX = e.changedTouches[0].clientX
+    const swipeDistance = this.touchStartX - touchEndX
+
+    if (swipeDistance > this.threshold && this.currentIndex < this.mobilePlanning.length - 1) {
+      this.currentIndex++
+    } else if (swipeDistance < -this.threshold && this.currentIndex > 0) {
+      this.currentIndex--
+    }
+  },
     getGymLink(gym) {
       switch (gym) {
         case 'Gymnase Caillaux':
