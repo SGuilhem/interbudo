@@ -526,13 +526,13 @@ export default {
     getGymLink(gym) {
       switch (gym) {
         case 'Gymnase Caillaux':
-          return '/dojos#caillaux'
+          return './dojos#caillaux'
         case 'Gymnase Stadium':
-          return '/dojos#stadium'
+          return './dojos#stadium'
         case 'Stade Charlety':
-          return '/dojos#charlety'
+          return './dojos#charlety'
         default:
-          return '/dojos'
+          return './dojos'
       }
     },
   },
