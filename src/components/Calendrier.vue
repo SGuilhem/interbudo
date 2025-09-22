@@ -80,27 +80,9 @@ export default {
   padding: 30px;
   margin-right: auto;
   margin-left: auto;
-}
-
-h4 {
-  font-size: 22px;
-  color: #d74340;
-}
-
-.card {
-  text-align: center;
-  border-radius: 0px;
-  border: 1px solid #cdced0;
-  background: #fff;
-  box-shadow: rgb(200, 200, 200) 0px 0px 8px;
-}
-
-.panel-heading {
-  border-bottom: 1px solid transparent;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background-color: #f5f5f5;
-  border-color: #ddd;
+  @media screen { max-width: 768px;
+    padding: 20px
+  }
 }
 .button {
   background-color: #d9534f !important;

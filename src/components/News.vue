@@ -3,7 +3,7 @@
   <div class="container lg:pt-14 pt-12" id="description">
     <h1>News</h1>
     <div class="news-content">
-    <p class="lg:mx-0 mx-2 text-md lg:pt-4 pt-8">
+    <p class="lg:mx-0 mx-2 text-md lg:pt-4 pt-2">
       Vive la rentrée du judo 2025 ! <br />La reprise des cours sera le lundi 15 septembre.
       <br />Venez nous rencontrer au forum des associations de Paris XIIIème, il se déroule du
       mercredi 10 au samedi 13 septembre 2025 toujours au centre commercial Italie 2 (mercredi et
@@ -77,8 +77,8 @@ export default {
 
 <style scoped>
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  /* padding-right: 15px;
+  padding-left: 15px; */
   margin-right: auto;
   margin-left: auto;
   font-display: 22px;

@@ -107,8 +107,6 @@ export default {
 
 <style scoped>
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -135,5 +133,8 @@ button:hover {
   border: 1px solid #cdced0;
   background: #fff;
   box-shadow: rgb(200, 200, 200) 0px 0px 8px;
+  @media screen { max-width: 768px;
+    padding: 30px   
+  }
 }
 </style>

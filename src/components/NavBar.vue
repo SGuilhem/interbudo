@@ -1,7 +1,7 @@
 <template>
   <!-- Mobile NavBar -->
-  <div class="bg-white shadow-md fixed top-0 left-0 h-16 content-center w-full z-50">
-    <div v-show="isMobile" class="hamburger custom-bg-blue text-white z-10">
+  <div v-show="isMobile" class="bg-white shadow-md fixed top-0 left-0 h-16 content-center w-full z-50">
+    <div class="hamburger custom-bg-blue text-white z-10">
       <div class="flex items-center w-full relative">
         <img
           src="/svg/hamburger.svg"

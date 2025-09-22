@@ -76,8 +76,8 @@ export default {
 
 <style scoped>
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  /* padding-right: 15px;
+  padding-left: 15px; */
   margin-right: auto;
   margin-left: auto;
   @media (min-width: 1200px) {
@@ -122,11 +122,14 @@ button:hover {
   display:flex;
   flex-direction: column;
   justify-self: center;
-  padding: 50px;
   text-align: center;
   border-radius: 0px;
   border: 1px solid #cdced0;
   background: #fff;
   box-shadow: rgb(200, 200, 200) 0px 0px 8px;
+  padding: 50px;
+  @media (max-width: 768px) {
+    padding: 20px;
+}
 }
 </style>
