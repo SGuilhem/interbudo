@@ -1,11 +1,11 @@
 <template>
-  <div class="container lg:pt-14 pt-12 m-auto">
+  <div class="container m-auto">
     <h1>Textes Officiels</h1>
-    <div class="pt-8 lg:pt-4">
+    <div>
       <div class="container bg-white">
 
         <!-- Bouton principal -->
-        <div class="text-center my-6">
+        <div class="text-center mb-4">
           <a :href="textes.textesOfficielsComplets" target="_blank" rel="noopener noreferrer">
             <button
               class="w-full lg:w-2/3 border-2 text-xl bg-red-custom text-gray-800 border-gray-200 py-3 px-6 rounded-md transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"

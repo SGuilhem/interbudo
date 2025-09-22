@@ -1,8 +1,8 @@
 <template>
   <!-- Desktop -->
-  <div class="container lg:pt-14 py-12" id="dirigeants">
+  <div class="container" id="dirigeants">
     <h1>Équipe Dirigeante</h1>
-    <div class="flex flex-wrap flex-col lg:flex-row justify-center gap-8 lg:pt-4 pt-8">
+    <div class="flex flex-wrap flex-col lg:flex-row justify-center gap-8">
       <!-- Carte -->
       <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
         <img
@@ -44,7 +44,7 @@
         <img
           src="../../src/assets/dirigeant-guillaume-uzan.jpg"
           alt="Trésorier Guillaume Uzan"
-          class="w-72 h-72 object-contain"
+          class="w-60 h-60 object-contain"
         />
         <div class="mt-4 text-center">
           <h4>Guillaume UZAN</h4>

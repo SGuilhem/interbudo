@@ -1,7 +1,7 @@
 <template>
-  <div class="container lg:pt-14 pt-12 m-auto" id="inscription">
+  <div class="container m-auto" id="inscription">
     <h1>Inscription au Club</h1>
-    <div class="pt-8 lg:pt-4">
+    <div>
       <div class="container bg-white">
         <div class="text-base font-medium text-gray-700 p-B4 text-center">
           <p class="font-bold">Pour vous inscrire:</p>
@@ -9,7 +9,7 @@
             Vous pouvez télécharger puis remplir le dossier d'inscription à déposer avec votre
             réglément directement au club ou à envoyer l'adresse suivante :
           </p>
-          <div class="flex flex-col ml-4 mt-4 justify-self-center">
+          <div class="flex flex-col lg:ml-4 ml-0 mt-4 justify-self-center">
             <div>
               <p>INTERBUDO C/O Caroline MASINI</p>
               <p>13 Rue Jeanne Chauvin</p>

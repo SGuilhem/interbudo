@@ -1,8 +1,8 @@
 <template>
-  <div class="container lg:pt-14 pt-12 m-auto" id="dojos">
+  <div class="container m-auto" id="dojos">
     <h1>Nos Dojos</h1>
     <!-- Desktop -->
-    <div v-if="!isMobile" class="flex flex-row justify-center pt-4 gap-10">
+    <div v-if="!isMobile" class="flex flex-row justify-center gap-10">
       <div v-for="dojo in dojos" :key="dojo.id">
         <div class="thumbnail">
           <router-link :to="dojo.link">
@@ -28,7 +28,7 @@
       <div v-if="isMobile"
         v-for="dojo in dojos"
         :key="dojo.id"
-        class="min-w-[85%] shrink-0 relative pt-8"
+        class="min-w-[85%] shrink-0 relative"
       >
         <div :class="`thumbnail ${dojo.id === 2 ? 'my-10' : ''}`">
           <a :href="dojo.link">

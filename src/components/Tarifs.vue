@@ -1,10 +1,10 @@
 <template>
-  <div class="container lg:pt-14 pt-12 m-auto" id="tarifs">
+  <div class="container" id="tarifs">
     <h1>Tarifs</h1>
     <!-- Desktop layout -->
-    <div v-if="!isMobile" class="flex flex-wrap -mx-2">
-      <div v-for="tarif in tarifs" :key="tarif.id" class="w-1/3 px-2 mb-4">
-        <div :class="`${tarif.id === 2 || tarif.id === 5 ? 'px-4' : ''} justify-between pt-4`">
+    <div v-if="!isMobile" class="flex flex-wrap">
+      <div v-for="tarif in tarifs" :key="tarif.id" class="w-1/3 mb-4">
+        <div :class="`${tarif.id === 2 || tarif.id === 5 ? 'px-4' : ''} justify-between`">
           <div class="card panel-heading">
             <h4 class="panel-heading py-2">{{ tarif.title }}</h4>
             <div :class="`${tarif.id === 3 ? 'pt-6 pb-5 px-6' : 'p-5'} bg-white`">
@@ -21,7 +21,7 @@
 
 
     <!-- Mobile -->
-    <div v-if="isMobile" v-for="tarif in tarifs" :key="tarif.id" class="min-w-[85%] shrink-0 relative pt-8">
+    <div v-if="isMobile" v-for="tarif in tarifs" :key="tarif.id" :class="`min-w-[85%] shrink-0 relative ${tarif.id != 1 ? 'pt-8' : 'pt-0'}`">
       <div class="card">
         <div>
           <h4 class="panel-heading py-2">{{ tarif.title }}</h4>
@@ -35,7 +35,7 @@
 
 
 
-  <div class="py-4">
+  <div class="py-4 lg:pt-0 pt-8">
     <div class="container">
       <div class="card panel-heading">
         <h4 class="panel-heading py-2"> Réglement de la cotisation </h4>

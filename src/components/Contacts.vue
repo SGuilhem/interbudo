@@ -1,8 +1,8 @@
 <template>
-  <div class="container lg:pt-14 pt-12 m-auto" id="contacts">
+  <div class="container m-auto" id="contacts">
     <h1>Nous contacter</h1>
 
-    <div class="pt-8 lg:pt-4">
+    <div>
       <div class="container bg-white">
         <!-- Bloc contact -->
         <div class="flex lg:flex-row flex-col">

@@ -1,7 +1,7 @@
 <template>
-  <div class="container lg:w-3/5 lg:pt-14 pt-12 m-auto">
+  <div class="container lg:w-3/5 lg:pt-14 pt-16">
     <h1>Nos Dojos</h1>
-    <div class="flex flex-col justify-center pt-4 gap-10">
+    <div class="flex flex-col justify-center gap-10">
       <div v-for="dojo in dojos" :key="dojo.id">
         <div
           class="thumbnail flex lg:flex-row flex-col"

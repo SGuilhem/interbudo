@@ -1,7 +1,7 @@
 <template>
-  <div class="container lg:w-3/5 lg:pt-14 pt-12 m-auto">
+  <div class="container lg:w-3/5 lg:pt-14 pt-16">
     <h1>Galerie Photos</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full pt-4 pb-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full pb-8">
       <div v-for="photo in photos" :key="photo.id" class="thumbnail self-center">
         <img
           :src="photo.img"

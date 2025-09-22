@@ -1,10 +1,10 @@
 <template>
-  <div class="container lg:pt-14 pt-12 m-auto" id="calendrier">
+  <div class="container m-auto" id="calendrier">
     <h1>Calendrier</h1>
-    <div class="pt-8 lg:pt-4">
+    <div>
       <div class="container bg-white">
         <div class="flex lg:flex-row flex-col">
-          <div class="flex flex-col w-full lg:w-2/3 mb-10 lg:mb-0 ml-0 lg:ml-6">
+          <div class="flex flex-col w-full lg:w-2/3 mb-10 lg:mb-0 ml-0 lg:ml-6 lg:pt-0 pt-2">
             <p class="font-bold">Calendrier Sportif</p>
             <p>Restez informé des évènements à venir en téléchargeant le calendrier sportifs 2025-2026 Vous y trouverez touts les évènements organisés aussi bien par la ligue de Paris que par votre club Interbudo :</p>
             <ul class="ml-10">
@@ -16,11 +16,11 @@
                   <li class="list-disc">Remises de ceintures</li>
                 </ul>
           </div>
-          <div class="flex flex-col self-center w-full lg:w-1/6 lg:m-auto">
+          <div class="flex flex-col self-center w-full lg:w-1/6 lg:m-auto items-center lg:pb-0 pb-4">
             <a :href="formulaire.questionnaireMineurs" target="_blank" rel="noopener noreferrer">
               <button
                 disabled
-                class="ml-0 border-2 text-lg bg-white text-gray-400 border-gray-200 py-2 px-4 rounded-md text-center mt-2 mb-2"
+                class="ml-0 border-2 text-lg bg-white text-gray-400 border-gray-200 py-2 px-4 rounded-md mt-2 mb-2"
               >
                 Télécharger le Calendrier Sportif
               </button>
@@ -81,7 +81,7 @@ export default {
   margin-right: auto;
   margin-left: auto;
   @media (max-width: 1024px) {
-    padding: 20px;
+    padding: 10px;
   }
 }
 .button {

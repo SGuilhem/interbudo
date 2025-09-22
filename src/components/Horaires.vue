@@ -1,9 +1,9 @@
 Avec ce code ci: "
 <template>
   <!-- Desktop -->
-  <div class="container lg:pt-14 py-12" id="horaires">
+  <div class="container" id="horaires">
     <h1>Horaires</h1>
-    <div class="flex justify-center font-semibold text-xl text-gray-800 pt-4">
+    <div class="flex justify-center font-semibold text-xl text-gray-800">
       Format à afficher:
     </div>
 
@@ -60,7 +60,7 @@ Avec ce code ci: "
     </div>
 
     <!-- Version mobile Planning -->
-    <div class="relative w-full overflow-hidden pt-8">
+    <div class="relative w-full overflow-hidden">
       <div v-if="viewMode === 'planning' && isMobile" class="pt-8 relative">
         <!-- Flèches -->
         <div
