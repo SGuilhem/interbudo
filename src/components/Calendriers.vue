@@ -1,8 +1,8 @@
 <template>
   <div class="container m-auto" id="calendrier">
-    <h1>Calendrier</h1>
+    <h1>Calendriers</h1>
     <div>
-      <div class="container bg-white">
+      <div class="frame bg-white">
         <div class="flex lg:flex-row flex-col">
           <div class="flex flex-col w-full lg:w-2/3 mb-10 lg:mb-0 ml-0 lg:ml-6 lg:pt-0 pt-2">
             <p class="font-bold">Calendrier Sportif</p>
@@ -42,7 +42,7 @@
 
 <script>
 export default {
-  name: 'Calendrier',
+  name: 'Calendriers',
   data() {
     return {
       isMobile: false,
@@ -76,7 +76,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.frame {
   padding: 30px;
   margin-right: auto;
   margin-left: auto;

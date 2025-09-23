@@ -2,7 +2,7 @@
   <div class="container m-auto" id="inscription">
     <h1>Inscription au Club</h1>
     <div>
-      <div class="container bg-white">
+      <div class="frame bg-white">
         <div class="text-base font-medium text-gray-700 p-B4 text-center">
           <p class="font-bold">Pour vous inscrire:</p>
           <p>
@@ -75,7 +75,7 @@
 
 <script>
 export default {
-  name: 'Inscription',
+  name: 'Inscriptions',
   data() {
     return {
       isMobile: false,
@@ -109,7 +109,7 @@ export default {
 </script>
 
 <style scoped>
-.container {
+.frame {
   padding: 30px;
   margin-right: auto;
   margin-left: auto;

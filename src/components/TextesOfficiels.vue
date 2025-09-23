@@ -2,7 +2,7 @@
   <div class="container m-auto">
     <h1>Textes Officiels</h1>
     <div>
-      <div class="container bg-white">
+      <div class="frame bg-white">
 
         <!-- Bouton principal -->
         <div class="text-center mb-4">
@@ -71,7 +71,7 @@ export default {
 
 
 <style scoped>
-.container {
+.frame {
   padding: 30px;
   margin-right: auto;
   margin-left: auto;

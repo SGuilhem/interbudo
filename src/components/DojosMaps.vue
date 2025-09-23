@@ -44,7 +44,7 @@ import mapStadium from '@/assets/map-stadium.jpg'
 import mapCharlety from '@/assets/map-charlety.jpg'
 
 export default {
-  name: 'DojosPage',
+  name: 'DojosMaps',
   data() {
     return {
       isMobile: false,
