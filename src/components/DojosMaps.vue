@@ -13,7 +13,7 @@
                 : 'charlety'
           "
         >
-          <div>
+          <div class="self-center">
             <a :href="dojo.link" target="_blank" rel="noopener noreferrer">
               <img :src="dojo.img" :alt="dojo.alt" />
             </a>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container" id="professeurs">
+  <div class="container lg:pt-12 pt-16" id="professeurs">
     <h1>Les Professeurs</h1>
     <div class="flex lg:flex-row flex-col justify-center">
       <div class="col-xs-12 col-sm-6 col-md-4">

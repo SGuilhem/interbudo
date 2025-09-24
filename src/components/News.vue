@@ -20,9 +20,9 @@
       également une toute nouvelle offre d’équipements avec les boutons ci-dessous pour découvrir et
       commander:
     </p>
-    <div class="justify-self-center lg:px-0 px-8">
+    <div class="text-center lg:px-0 px-8">
       <button
-        class="lg:mr-4 mr-0 border-2 text-lg border-gray-200 bg-red-custom text-gray-900 p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+        class="lg:mr-4 mr-0 border-2 text-lg border-gray-200 bg-red-custom text-gray-900 p-4 rounded-md text-center mt-6 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
       >
         Télécharger la description des nouveaux équipements du club
       </button>

@@ -128,6 +128,10 @@ export default {
 .nav-link {
   position: relative;
   display: inline-block;
+  font-size: 18px;
+  @media (min-width: 1025px) and (max-width: 1920px) {
+    font-size: 12px;
+  }
 }
 .nav-link::after {
   content: '';

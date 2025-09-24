@@ -1,7 +1,7 @@
 Avec ce code ci: "
 <template>
   <!-- Desktop -->
-  <div class="container" id="horaires">
+  <div class="container lg:pt-12 pt-16" id="horaires">
     <h1>Horaires</h1>
     <div class="flex justify-center font-semibold text-xl text-gray-800">
       Format à afficher:
@@ -10,16 +10,16 @@ Avec ce code ci: "
     <!-- Boutons de sélection -->
     <div class="flex justify-center gap-4 lg:pt-4 pt-4">
       <button
-        @click="selectPlanningView"
-        :class="`lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer ${planningIsSelected ? 'bg-red-custom border-red-custom text-white' : ''}`"
-      >
-        Format Planning
-      </button>
-      <button
         @click="selectTextView"
         :class="`lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer ${textIsSelected ? 'bg-red-custom border-red-custom text-white' : ''}`"
       >
         Format texte
+      </button>
+      <button
+        @click="selectPlanningView"
+        :class="`lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer ${planningIsSelected ? 'bg-red-custom border-red-custom text-white' : ''}`"
+      >
+        Format Planning
       </button>
     </div>
     <!-- Version desktop Planning -->
@@ -175,10 +175,10 @@ export default {
     return {
       isMobile: null,
       toggleMobileMenu: false,
-      viewMode: 'planning',
+      viewMode: 'text',
       isSelected: null,
-      textIsSelected: false,
-      planningIsSelected: true,
+      textIsSelected: true,
+      planningIsSelected: false,
       currentIndex: 0,
       cardWidth: 0,
       sideGap: 0,
