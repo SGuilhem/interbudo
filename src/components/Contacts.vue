@@ -3,7 +3,7 @@
     <h1>Nous contacter</h1>
 
     <div>
-      <div class="container bg-white">
+      <div class="container content bg-white">
         <!-- Bloc contact -->
         <div class="flex lg:flex-row flex-col">
           <div
@@ -102,5 +102,8 @@ export default {
   @media (max-width: 1024px) {
     padding: 20px;
   }
+}
+.content {
+  box-shadow: rgb(200, 200, 200) 10px 15px 10px;
 }
 </style>

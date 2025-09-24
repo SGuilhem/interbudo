@@ -76,7 +76,7 @@ export default {
       isMobile: null,
       toggleMobileMenu: false,
       links: [
-        { id: 1, label: 'Interbudo', to: '/#description' },
+        { id: 1, label: 'Accueil', to: '/#description' },
         { id: 2, label: 'Dojos', to: './dojosmaps' },
         { id: 3, label: 'Professeurs', to: './professeurs' },
         { id: 4, label: 'Dirigeants', to: './dirigeants' },

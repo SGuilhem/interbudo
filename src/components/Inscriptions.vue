@@ -1,5 +1,5 @@
 <template>
-  <div class="container lg:pt-12 pt-16" id="inscription">
+  <div class="container lg:pt-12 pt-16">
     <h1>Inscription au Club</h1>
     <div>
       <div class="frame bg-white">

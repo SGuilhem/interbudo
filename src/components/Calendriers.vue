@@ -1,5 +1,5 @@
 <template>
-  <div class="container lg:pt-12 pt-16" id="calendrier">
+  <div class="container lg:pt-12 pt-16">
     <h1>Calendriers</h1>
     <div>
       <div class="frame bg-white">

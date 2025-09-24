@@ -1,5 +1,5 @@
 <template>
-  <div class="container m-auto" id="dojos">
+  <div class="container m-auto">
     <h1>Nos Dojos</h1>
     <!-- Desktop -->
     <div v-if="!isMobile" class="flex flex-row justify-center gap-10">
