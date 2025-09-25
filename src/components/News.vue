@@ -211,12 +211,24 @@ export default {
     }
 }
 .baby-judo-color {
-  border-bottom: 4px solid #d7cf40ae;
-    border-left: 4px solid #d7cf40ae;
-    border-top: 1px solid #d7cf40ae;
-    border-right: 1px solid #d7cf40ae;
+  border-bottom: 4px solid #d74340ae;
+    border-left: 4px solid #d74340ae;
+    border-top: 1px solid #d74340ae;
+    border-right: 1px solid #d74340ae;
 }
 .enfants-color {
+  border-bottom: 4px solid #d74340ae;
+    border-left: 4px solid #d74340ae;
+    border-top: 1px solid #d74340ae;
+    border-right: 1px solid #d74340ae;
+}
+.adultes-color {
+  border-bottom: 4px solid #d74340ae;
+    border-left: 4px solid #d74340ae;
+    border-top: 1px solid #d74340ae;
+    border-right: 1px solid #d74340ae;
+}
+/* .enfants-color {
   border-bottom: 4px solid rgba(0, 0, 255, 0.774);
     border-left: 4px solid rgba(0, 0, 255, 0.774);
     border-top: 1px solid rgba(0, 0, 255, 0.774);
@@ -227,7 +239,7 @@ export default {
     border-left: 4px solid rgba(26, 25, 25, 0.835);
     border-top: 1px solid rgba(26, 25, 25, 0.835);
     border-right: 1px solid rgba(26, 25, 25, 0.835);
-}
+} */
 
 button:hover {
   background-color: #d9534f !important;
