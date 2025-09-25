@@ -33,14 +33,9 @@
   h2 {
     font-size: 30px;
     font-weight: lighter;
-    color: #D74340;
     padding-bottom: 0px;
     padding-top: 10px;
     text-align: left;
-    border-bottom: 4px solid #d74340ae;
-    border-left: 4px solid #d74340ae;
-    border-top: 1px solid #d74340ae;
-    border-right: 1px solid #d74340ae;
     margin-bottom: 10px;
 
     @media (max-width: 1024px) {

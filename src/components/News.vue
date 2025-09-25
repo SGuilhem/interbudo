@@ -82,7 +82,7 @@
     </div>
 
     <!-- Adultes -->
-    <div class="content relative mt-16">
+    <div class="content relative mt-36">
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -210,6 +210,15 @@ export default {
     padding: 15px;
     }
 }
+
+h2 {
+    color: #D74340;
+    border-bottom: 4px solid #d74340ae;
+    border-left: 4px solid #d74340ae;
+    border-top: 1px solid #d74340ae;
+    border-right: 1px solid #d74340ae;
+}
+
 .baby-judo-color {
   border-bottom: 4px solid #d74340ae;
     border-left: 4px solid #d74340ae;

@@ -122,17 +122,17 @@ Avec ce code ci: "
             class="flex-shrink-0"
             :style="{ width: cardWidth + 'px' }"
           >
-            <div class="p-4 shadow-sm bg-white">
-              <h2 class="text-lg font-bold text-center mb-4">{{ day.name }}</h2>
-              <div v-for="(cours, j) in day.courses" :key="j" class="mb-4 border-b pb-2">
-                <p v-if="cours.regroupement" class="text-lg font-bold text-center mb-4">
+            <div class="shadow-sm bg-white">
+              <h2 class="text-lg font-bold text-center mb-4 day-title">{{ day.name }}</h2>
+              <div v-for="(cours, j) in day.courses" :key="j" class="p-4 mb-4 border-b pb-2">
+                <p v-if="cours.regroupement" class="text-lg font-bold text-center mb-4 day-title -p-4">
                   {{ cours.titleBis }}
                 </p>
                 <h3 class="font-semibold">{{ cours.title }}</h3>
                 <p>{{ cours.time }}</p>
                 <p>{{ cours.prof }}</p>
                 <router-link
-                  :to="{ path: '/dojos', hash: getGymHash(cours.gym) }"
+                  :to="{ path: './dojosmaps'}"
                   class="text-blue-600 underline"
                 >
                   {{ cours.gym }}
@@ -153,7 +153,7 @@ Avec ce code ci: "
           <p>- {{ seance.day }} de {{ seance.time }}</p>
           <p>
             <router-link
-              :to="{ path: '/dojos', hash: getGymHash(seance.gym) }"
+              :to="{ path: './dojosmaps'}"
               class="text-blue-600 underline"
             >
               {{ seance.gym }}
@@ -564,5 +564,12 @@ button {
 button:hover {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
+}
+.day-title {
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #f5f5f5;
+  border-color: #ddd;
 }
 </style>
