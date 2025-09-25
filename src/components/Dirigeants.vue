@@ -2,9 +2,9 @@
   <!-- Desktop -->
   <div class="container lg:pt-12 pt-16">
     <h1>Équipe Dirigeante</h1>
-    <div class="flex flex-wrap flex-col lg:flex-row justify-center gap-8">
+    <div class="flex flex-wrap flex-col lg:flex-row justify-center dirigeants">
       <!-- Carte -->
-      <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
+      <div class="cards bg-white shadow-md flex flex-col items-center p-4">
         <img
           src="../../src/assets/dirigeant-caroline-masini.jpg"
           alt="Présidente Caroline Masini"
@@ -22,11 +22,11 @@
           <p class="text-gray-800 mt-1">06 11 18 34 97</p>
         </div>
       </div>
-      <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
+      <div class="cards bg-white shadow-md flex flex-col items-center p-4">
         <img
           src="../../src/assets/professeur-charly.jpg"
           alt="Professeur Charly Wable"
-          class="w-72 h-72 object-contain"
+          class="w-72 h-72 object-cover"
         />
         <div class="mt-4 text-center">
           <h4>Charly WABLE</h4>
@@ -40,11 +40,11 @@
           <p class="text-gray-800 mt-1">06 59 82 71 43</p>
         </div>
       </div>
-      <div class="lg:w-1/4 bg-white shadow-md flex flex-col items-center p-4">
+      <div class="cards bg-white shadow-md flex flex-col items-center p-4">
         <img
           src="../../src/assets/dirigeant-guillaume-uzan.jpg"
           alt="Trésorier Guillaume Uzan"
-          class="w-60 h-60 object-contain"
+          class="w-72 h-72 object-contain"
         />
         <div class="mt-4 text-center">
           <h4>Guillaume UZAN</h4>
@@ -97,19 +97,9 @@ export default {
 .container {
   margin-right: auto;
   margin-left: auto;
-  @media (min-width: 1200px) {
+  @media (min-width: 1025px) {
     .container {
       width: 1600px;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
-  @media (min-width: 768px) {
-    .container {
-      width: 750px;
     }
   }
 }
@@ -124,5 +114,9 @@ h4 {
 p {
   font-size: 18px;
   /* color: #333; */
+}
+
+.dirigeants {
+  gap: 15px
 }
 </style>
