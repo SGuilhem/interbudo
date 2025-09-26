@@ -199,7 +199,7 @@ export default {
           {
             title: 'Baby Judo (4-6 ans)',
             time: '15h30 - 16h30',
-            prof: 'avec Romane',
+            prof: 'avec Charly',
             gym: 'Stade Charlety',
           },
           null,
@@ -341,7 +341,7 @@ export default {
             {
               title: 'Baby Judo (4-6 ans)',
               time: '15h30 - 16h30',
-              prof: 'avec Romane',
+              prof: 'avec Charly',
               gym: 'Stade Charlety',
             },
             {
@@ -371,7 +371,7 @@ export default {
               day: 'Samedi',
               time: '15h30 - 16h30',
               gym: 'Stade Charlety',
-              prof: 'avec Romane',
+              prof: 'avec Charly',
             },
           ],
         },

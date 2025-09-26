@@ -1,10 +1,10 @@
 <template>
   <!-- Desktop -->
   <div class="container lg:pt-12 pt-16">
-    <h1>Bienvenue chez Interbudo!</h1>
+     <img src="../assets/banner.jpeg" class="justify-self-center lg:pt-8 pt-4"/>
 
     <!-- Le Club -->
-    <div class="content relative mt-16">
+    <div class="content relative mt-12">
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -30,6 +30,11 @@
 
     <!-- Baby Judos -->
     <div class="content relative mt-16">
+<!-- <img 
+  src="../assets/Equipes2.png" 
+  alt="Cours Adultes"
+  class="banner-opacity absolute inset-0 w-full h-full lg:object-cover object-contain opacity-50 z-0 object-[center_15%] translate-y-[-150px]"
+/> -->
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -56,6 +61,11 @@
 
     <!-- Enfants -->
     <div class="content relative mt-16">
+<!-- <img 
+  src="../assets/Equipes2.png" 
+  alt="Cours Adultes"
+  class="banner-opacity absolute inset-0 w-full h-full lg:object-cover object-contain opacity-50 z-0 object-[center_15%] translate-y-[-150px]"
+/> -->
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -82,7 +92,17 @@
     </div>
 
     <!-- Adultes -->
-    <div class="content relative mt-36">
+    <div class="content relative lg:mt-72 mt-36 border-red-custom">
+      <!-- <img 
+  src="../assets/Equipes2.png" 
+  alt="Cours Adultes"
+  class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
+/> -->
+<img 
+  src="../assets/Equipes2.png" 
+  alt="Cours Adultes"
+  class="banner-opacity absolute inset-0 w-full h-full lg:object-cover object-contain opacity-50 z-0 object-[center_15%] lg:translate-y-[-150px]"
+/>
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -150,6 +170,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'News',
   data() {
@@ -209,6 +230,35 @@ export default {
   @media (max-width: 1024px) {
     padding: 15px;
     }
+    @media (min-width: 768px) {
+    --tw-translate-y: -228px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+   @media (max-width: 1024px) {
+    padding: 15px;
+    }
+   @media (min-width: 1440px) {
+    --tw-translate-y: -208px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+}
+
+.banner-opacity {
+  --tw-translate-y: -168px;
+   translate: var(--tw-translate-x) var(--tw-translate-y);
+  
+   @media (min-width: 768px) {
+    --tw-translate-y: -228px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+   @media (min-width: 1024px) {
+    --tw-translate-y: -225px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
+   @media (min-width: 1440px) {
+    --tw-translate-y: -208px;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+  }
 }
 
 h2 {
