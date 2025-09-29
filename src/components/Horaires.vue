@@ -111,13 +111,13 @@ Avec ce code ci: "
           class="flex transition-transform duration-500 ease-in-out gap-5"
           :style="{
             transform: `translateX(-${currentIndex * (cardWidth + 20)}px)`,
-            paddingLeft: sideGap + 'px',
+            paddingLeft: `${currentIndex === 0 ? '10' :'25'}px`,
           }"
           @touchstart="onTouchStart"
           @touchend="onTouchEnd"
         >
           <div
-            v-for="(day, i) in mobilePlanning"
+            v-for="(day, i) in mobilePlanning.filter(d => d.name !== 'Samedi 1 fois par mois')"
             :key="i"
             class="flex-shrink-0"
             :style="{ width: cardWidth + 'px' }"
@@ -125,12 +125,10 @@ Avec ce code ci: "
             <div class="shadow-sm bg-white">
               <h2 class="text-lg font-bold text-center mb-4 day-title">{{ day.name }}</h2>
               <div v-for="(cours, j) in day.courses" :key="j" class="p-4 mb-4 border-b pb-2">
-                <p v-if="cours.regroupement" class="text-lg font-bold text-center mb-4 day-title -p-4">
-                  {{ cours.titleBis }}
-                </p>
                 <h3 class="font-semibold">{{ cours.title }}</h3>
                 <p>{{ cours.time }}</p>
-                <p>{{ cours.prof }}</p>
+                <p v-if="cours.prof">{{ cours.prof }}</p>
+                <p v-else>{{ cours.regroupement }}</p>
                 <router-link
                   :to="{ path: './dojosmaps'}"
                   class="text-blue-600 underline"
@@ -138,6 +136,23 @@ Avec ce code ci: "
                   {{ cours.gym }}
                 </router-link>
               </div>
+            </div>
+            <div v-if="day.name === 'Samedi' && mobilePlanning[4]"> 
+              <div class="shadow-sm bg-white">
+              <h2 class="text-lg font-bold text-center mb-4 day-title">{{ mobilePlanning[4].name }}</h2>
+              <div class="p-4 mb-4 border-b pb-2">
+              <h3 class="font-semibold">{{ mobilePlanning[4].courses.title }}</h3>
+                <p>{{ mobilePlanning[4].courses.time }}</p>
+                <p v-if="mobilePlanning[4].courses.prof">{{ mobilePlanning[4].courses.prof }}</p>
+                <p v-else>{{ mobilePlanning[4].courses.regroupement }}</p>
+                <router-link
+                  :to="{ path: './dojosmaps'}"
+                  class="text-blue-600 underline"
+                >
+                  {{ mobilePlanning[4].courses.gym }}
+                </router-link>
+            </div>
+            </div>
             </div>
           </div>
         </div>
@@ -344,14 +359,16 @@ export default {
               prof: 'avec Charly',
               gym: 'Stade Charlety',
             },
-            {
-              title: 'Judo Adulte (Ado >10 ans)',
-              titleBis: 'Samedi 1 fois par mois',
-              regroupement: 'Regroupement interclubs',
-              time: '16h30 - 18h30',
-              gym: 'Stade Charlety',
-            },
           ],
+        },
+        {
+          name: 'Samedi 1 fois par mois',
+          courses:{
+            title: 'Judo Adulte (Ado >10 ans)',
+            regroupement: 'Regroupement interclubs',
+            time: '16h30 - 18h30',
+            gym: 'Stade Charlety',
+          }
         },
       ],
 
@@ -504,15 +521,15 @@ export default {
     },
     updateCardWidth() {
       const width = window.innerWidth
-      this.cardWidth = Math.floor(width * 0.75)
+      this.cardWidth = Math.floor(width * 0.70)
       this.sideGap = Math.floor(width * 0.09)
     },
-    sliderTransform() {
+    /* sliderTransform() {
       const slideSize = this.cardWidth + this.sideGap
       const offset =
         this.currentIndex === 0 ? this.sideGap : (this.viewportWidth - this.cardWidth) / 2
       return `translateX(${offset - this.currentIndex * slideSize}px)`
-    },
+    }, */
     slideToNext() {
       if (this.currentIndex < this.mobilePlanning.length - 1) {
         this.currentIndex++
