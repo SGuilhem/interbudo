@@ -1,7 +1,6 @@
 <template>
-  <!-- Desktop -->
   <div class="container pt-16">
-     <img src="../assets/banner.jpeg" class="banner justify-self-center lg:pt-8 pt-4"/>
+     <img src="../assets/banner.jpeg" class="banner justify-self-center lg:pt-8 pt-4" id="accueil"/>
 
     <!-- Le Club -->
     <div class="content relative border-red-custom">

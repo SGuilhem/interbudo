@@ -1,6 +1,9 @@
 <template>
   <!-- Mobile NavBar -->
-  <div v-show="isMobile" class="bg-white shadow-md fixed top-0 left-0 h-16 content-center w-full z-50">
+  <div
+    v-show="isMobile"
+    class="bg-white shadow-md fixed top-0 left-0 h-16 content-center w-full z-50"
+  >
     <div class="hamburger text-white z-10">
       <div class="flex items-center w-full relative">
         <img
@@ -15,35 +18,40 @@
   </div>
 
   <!-- Mobile Menu -->
-<transition name="slide-down">
-  <nav
-    v-if="toggleMobileMenu"
-    class="side-menu-mobile bg-beige"
-  >
-  <button @click="closeMenu" class="absolute right-4 top-2 z-50 text-white text-xl">
-      <img src="/svg/cross-close.svg" alt="Fermer" class="w-12 h-12 text-right" />
-    </button>
-    <div class="mobile-container w-full">
-      <ul class="divide-y divide-gray-400 text-lg font-medium w-full">
-        <li
-          v-for="link in links"
-          :key="link.id"
-          class="w-full"
-        >
-          <router-link
-            :to="link.to"
-            class="block py-4 red-custom font-bold"
-            @click.native="closeMenu"
-          >
-            {{ link.label }}
-          </router-link>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</transition>
-
-
+  <transition name="slide-down">
+    <nav v-if="toggleMobileMenu" class="side-menu-mobile bg-beige">
+      <button @click="closeMenu" class="absolute right-4 top-2 z-50 text-white text-xl">
+        <img src="/svg/cross-close.svg" alt="Fermer" class="w-12 h-12 text-right" />
+      </button>
+      <div class="mobile-container w-full">
+        <ul class="divide-y divide-gray-400 text-lg font-medium w-full">
+          <li v-for="link in links" :key="link.id" class="w-full">
+            <router-link
+              v-if="link.id === 1"
+              :to="link.to"
+              class="block py-4 red-custom font-bold"
+              @click.native="
+                () => {
+                  closeMenu()
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }
+              "
+            >
+              {{ link.label }}
+            </router-link>
+            <router-link
+              v-else
+              :to="link.to"
+              class="block py-4 red-custom font-bold"
+              @click.native="closeMenu"
+            >
+              {{ link.label }}
+            </router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </transition>
 
   <!-- Desktop -->
   <nav
@@ -76,7 +84,7 @@ export default {
       isMobile: null,
       toggleMobileMenu: false,
       links: [
-        { id: 1, label: 'Accueil', to: '/#description' },
+        { id: 1, label: 'Accueil', to: './' },
         { id: 2, label: 'Dojos', to: './dojosmaps' },
         { id: 3, label: 'Professeurs', to: './professeurs' },
         { id: 4, label: 'Horaires', to: './horaires' },
@@ -164,7 +172,9 @@ export default {
 /* Animation slide down */
 .slide-down-enter-active,
 .slide-down-leave-active {
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  transition:
+    transform 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
 }
 .slide-down-enter-from {
   transform: translateY(-100%);
@@ -202,6 +212,4 @@ export default {
 .mobile-container {
   width: 100%;
 }
-
-
 </style>
