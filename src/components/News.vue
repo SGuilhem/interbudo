@@ -1,10 +1,15 @@
 <template>
   <!-- Desktop -->
-  <div class="container lg:pt-12 pt-16">
-     <img src="../assets/banner.jpeg" class="justify-self-center lg:pt-8 pt-4"/>
+  <div class="container pt-16">
+     <img src="../assets/banner.jpeg" class="banner justify-self-center lg:pt-8 pt-4"/>
 
     <!-- Le Club -->
-    <div class="content relative mt-12">
+    <div class="content relative border-red-custom">
+      <img 
+  src="../assets/Equipes2.png" 
+  alt="Cours Adultes"
+  class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
+/>
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -29,12 +34,12 @@
     </div>
 
     <!-- Baby Judos -->
-    <div class="content relative mt-16">
-<!-- <img 
+    <div class="content relative mt-16  border-red-custom">
+      <img 
   src="../assets/Equipes2.png" 
   alt="Cours Adultes"
-  class="banner-opacity absolute inset-0 w-full h-full lg:object-cover object-contain opacity-50 z-0 object-[center_15%] translate-y-[-150px]"
-/> -->
+  class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
+/>
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -60,12 +65,12 @@
     </div>
 
     <!-- Enfants -->
-    <div class="content relative mt-16">
-<!-- <img 
+    <div class="content relative mt-16  border-red-custom">
+      <img 
   src="../assets/Equipes2.png" 
   alt="Cours Adultes"
-  class="banner-opacity absolute inset-0 w-full h-full lg:object-cover object-contain opacity-50 z-0 object-[center_15%] translate-y-[-150px]"
-/> -->
+  class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
+/>
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
            bg-white px-6 py-2 text-xl font-semibold 
@@ -92,16 +97,11 @@
     </div>
 
     <!-- Adultes -->
-    <div class="content relative lg:mt-72 mt-36 border-red-custom">
-      <!-- <img 
+    <div class="content relative mt-16  border-red-custom border-red-custom">
+      <img 
   src="../assets/Equipes2.png" 
   alt="Cours Adultes"
   class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
-/> -->
-<img 
-  src="../assets/Equipes2.png" 
-  alt="Cours Adultes"
-  class="banner-opacity absolute inset-0 w-full h-full lg:object-cover object-contain opacity-50 z-0 object-[center_15%] lg:translate-y-[-150px]"
 />
   <h2
     class="absolute top-0 -left-6 -translate-y-1/2 
@@ -205,20 +205,11 @@ export default {
   margin-right: auto;
   margin-left: auto;
   font-display: 22px;
-  @media (min-width: 1200px) {
-    .container {
-      width: 1170px;
-    }
-  }
-  @media (min-width: 992px) {
-    .container {
-      width: 970px;
-    }
-  }
+  max-width: 95%;
   @media (min-width: 768px) {
-    .container {
-      width: 750px;
-    }
+  }
+  @media (min-width: 1440px) {
+  max-width: 75%;
   }
 }
 .content {
@@ -228,9 +219,9 @@ export default {
   background: #fff;
   box-shadow: rgb(200, 200, 200) 10px 15px 10px;
   @media (max-width: 1024px) {
-    padding: 15px;
+    padding: 10px;
     }
-    @media (min-width: 768px) {
+  /*  @media (min-width: 768px) {
     --tw-translate-y: -228px;
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
@@ -240,6 +231,12 @@ export default {
    @media (min-width: 1440px) {
     --tw-translate-y: -208px;
     translate: var(--tw-translate-x) var(--tw-translate-y);
+  } */
+}
+.banner {
+  padding-bottom: 50px;
+  @media (min-width: 1024px) {
+    padding-bottom: 60px;
   }
 }
 

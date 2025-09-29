@@ -1,7 +1,7 @@
 Avec ce code ci: "
 <template>
   <!-- Desktop -->
-  <div class="container lg:pt-12 pt-16">
+  <div class="container pt-16">
     <h1>Horaires</h1>
     <div class="flex justify-center font-semibold text-xl text-gray-800">
       Format à afficher:

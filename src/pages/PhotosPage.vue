@@ -1,5 +1,5 @@
 <template>
-  <div class="container lg:w-3/4 lg:pt-12 pt-16">
+  <div class="container lg:w-3/4 pt-16">
     <h1>Galerie Photos</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full pb-8">
       <div v-for="photo in photos" :key="photo.id" class="thumbnail self-center">

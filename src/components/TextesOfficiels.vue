@@ -1,5 +1,5 @@
 <template>
-  <div class="container lg:pt-12 pt-16">
+  <div class="container pt-16">
     <h1>Textes Officiels</h1>
     <div>
       <div class="frame bg-white">

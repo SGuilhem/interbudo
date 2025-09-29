@@ -1,5 +1,5 @@
 <template>
-  <div class="container lg:w-3/5 lg:pt-14 pt-16">
+  <div class="container lg:w-3/5 pt-16">
     <h1>Nos Partenaires</h1>
     <div class="flex flex-wrap justify-center gap-6 pb-8">
       <div

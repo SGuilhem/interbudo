@@ -32,7 +32,7 @@
         >
           <router-link
             :to="link.to"
-            class="block py-4 text-gray-800 transition-colors"
+            class="block py-4 red-custom font-bold"
             @click.native="closeMenu"
           >
             {{ link.label }}

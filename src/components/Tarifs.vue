@@ -1,5 +1,5 @@
 <template>
-  <div class="container lg:pt-12 pt-16">
+  <div class="container pt-16">
     <h1>Tarifs</h1>
     <!-- Desktop layout -->
     <div v-if="!isMobile" class="flex flex-wrap">

@@ -1,6 +1,6 @@
 <template>
   <!-- Desktop -->
-  <div class="container lg:pt-12 pt-16">
+  <div class="container pt-16">
     <h1>Équipe Dirigeante</h1>
     <div class="flex flex-wrap flex-col lg:flex-row justify-center dirigeants">
       <!-- Carte -->
