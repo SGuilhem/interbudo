@@ -16,6 +16,7 @@ const routes = [
   { path: '/', component: HomePage },
   { path: '/dojosmaps', component: DojosMapsPage },
   { path: '/photos', component: PhotosPage },
+  { path: '/galerie/:slug', component: () => import('@/pages/GalerieCategoriePage.vue'), props: true },
   { path: '/partenaires', component: PartenairesPage },
   { path: '/dirigeants', component: DirigeantsPage },
   { path: '/professeurs', component: ProfsPage },
