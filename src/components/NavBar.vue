@@ -30,7 +30,7 @@
               v-if="link.id === 1"
               :to="link.to"
               class="block py-4 red-custom font-bold"
-              @click.native="
+              @click="
                 () => {
                   closeMenu()
                   window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -43,7 +43,7 @@
               v-else
               :to="link.to"
               class="block py-4 red-custom font-bold"
-              @click.native="closeMenu"
+              @click="closeMenu"
             >
               {{ link.label }}
             </router-link>
@@ -84,18 +84,17 @@ export default {
       isMobile: null,
       toggleMobileMenu: false,
       links: [
-        { id: 1, label: 'Accueil', to: '/' },
-        { id: 2, label: 'Dojos', to: '/dojosmaps' },
-        { id: 3, label: 'Professeurs', to: '/professeurs' },
-        { id: 4, label: 'Horaires', to: '/horaires' },
-        { id: 5, label: 'Tarifs', to: '/tarifs' },
-        { id: 6, label: 'Inscriptions', to: '/inscriptions' },
-        { id: 7, label: 'Dirigeants', to: '/dirigeants' },
-        { id: 8, label: 'Calendriers', to: '/calendriers' },
-        { id: 9, label: 'Textes Officiels', to: '/textesofficiels' },
-        { id: 10, label: 'Photos', to: '/photos' },
-        { id: 11, label: 'Partenaires', to: '/partenaires' },
-        { id: 12, label: 'Contacts', to: '/#contacts' },
+        { id: 1,  label: 'Accueil',          to: '/' },
+        { id: 2,  label: 'Le Staff',         to: '/staff' },
+        { id: 3,  label: 'Les Cours',        to: '/horaires' },
+        { id: 4,  label: 'Dojos & Horaires', to: '/dojosmaps' },
+        { id: 5,  label: 'Tarifs',           to: '/tarifs' },
+        { id: 6,  label: 'Inscriptions',     to: '/inscriptions' },
+        { id: 7,  label: 'Documents',        to: '/documents' },
+        { id: 8,  label: 'Articles',         to: '/articles' },
+        { id: 9,  label: 'Photos',           to: '/photos' },
+        { id: 10, label: 'Partenaires',      to: '/partenaires' },
+        { id: 11, label: 'Contact',          to: '/#contacts' },
       ],
     }
   },
@@ -103,7 +102,7 @@ export default {
     this.isMobile = this.checkIfMobile()
     window.addEventListener('resize', this.handleResize)
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('resize', this.handleResize)
   },
   methods: {
