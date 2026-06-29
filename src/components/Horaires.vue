@@ -3,23 +3,21 @@ Avec ce code ci: "
   <!-- Desktop -->
   <div class="container pt-16">
     <h1>Horaires</h1>
-    <div class="flex justify-center font-semibold text-xl text-gray-800">
-      Format à afficher:
-    </div>
+    <div class="flex justify-center font-semibold text-xl text-gray-800">Format à afficher:</div>
 
     <!-- Boutons de sélection -->
     <div class="flex justify-center gap-4 lg:pt-4 pt-4">
-      <button
-        @click="selectTextView"
-        :class="`lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer ${textIsSelected ? 'bg-red-custom border-red-custom text-white' : ''}`"
-      >
-        Format texte
-      </button>
       <button
         @click="selectPlanningView"
         :class="`lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer ${planningIsSelected ? 'bg-red-custom border-red-custom text-white' : ''}`"
       >
         Format Planning
+      </button>
+      <button
+        @click="selectTextView"
+        :class="`lg:ml-4 ml-0 border-2 border-gray-200 bg-white p-4 rounded-md text-center mt-2 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer ${textIsSelected ? 'bg-red-custom border-red-custom text-white' : ''}`"
+      >
+        Format texte
       </button>
     </div>
     <!-- Version desktop Planning -->
@@ -111,13 +109,13 @@ Avec ce code ci: "
           class="flex transition-transform duration-500 ease-in-out gap-5"
           :style="{
             transform: `translateX(-${currentIndex * (cardWidth + 20)}px)`,
-            paddingLeft: `${currentIndex === 0 ? '10' :'25'}px`,
+            paddingLeft: `${currentIndex === 0 ? '10' : '25'}px`,
           }"
           @touchstart="onTouchStart"
           @touchend="onTouchEnd"
         >
           <div
-            v-for="(day, i) in mobilePlanning.filter(d => d.name !== 'Samedi 1 fois par mois')"
+            v-for="(day, i) in mobilePlanning.filter((d) => d.name !== 'Samedi 1 fois par mois')"
             :key="i"
             class="flex-shrink-0"
             :style="{ width: cardWidth + 'px' }"
@@ -129,30 +127,26 @@ Avec ce code ci: "
                 <p>{{ cours.time }}</p>
                 <p v-if="cours.prof">{{ cours.prof }}</p>
                 <p v-else>{{ cours.regroupement }}</p>
-                <router-link
-                  :to="{ path: './dojosmaps'}"
-                  class="text-blue-600 underline"
-                >
+                <router-link :to="{ path: './dojosmaps' }" class="text-blue-600 underline">
                   {{ cours.gym }}
                 </router-link>
               </div>
             </div>
-            <div v-if="day.name === 'Samedi' && mobilePlanning[4]"> 
+            <div v-if="day.name === 'Samedi' && mobilePlanning[4]">
               <div class="shadow-sm bg-white">
-              <h2 class="text-lg font-bold text-center mb-4 day-title">{{ mobilePlanning[4].name }}</h2>
-              <div class="p-4 mb-4 border-b pb-2">
-              <h3 class="font-semibold">{{ mobilePlanning[4].courses.title }}</h3>
-                <p>{{ mobilePlanning[4].courses.time }}</p>
-                <p v-if="mobilePlanning[4].courses.prof">{{ mobilePlanning[4].courses.prof }}</p>
-                <p v-else>{{ mobilePlanning[4].courses.regroupement }}</p>
-                <router-link
-                  :to="{ path: './dojosmaps'}"
-                  class="text-blue-600 underline"
-                >
-                  {{ mobilePlanning[4].courses.gym }}
-                </router-link>
-            </div>
-            </div>
+                <h2 class="text-lg font-bold text-center mb-4 day-title">
+                  {{ mobilePlanning[4].name }}
+                </h2>
+                <div class="p-4 mb-4 border-b pb-2">
+                  <h3 class="font-semibold">{{ mobilePlanning[4].courses.title }}</h3>
+                  <p>{{ mobilePlanning[4].courses.time }}</p>
+                  <p v-if="mobilePlanning[4].courses.prof">{{ mobilePlanning[4].courses.prof }}</p>
+                  <p v-else>{{ mobilePlanning[4].courses.regroupement }}</p>
+                  <router-link :to="{ path: './dojosmaps' }" class="text-blue-600 underline">
+                    {{ mobilePlanning[4].courses.gym }}
+                  </router-link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -167,10 +161,7 @@ Avec ce code ci: "
         <div v-for="(seance, i) in cours.courses" :key="i" class="mt-2">
           <p>- {{ seance.day }} de {{ seance.time }}</p>
           <p>
-            <router-link
-              :to="{ path: './dojosmaps'}"
-              class="text-blue-600 underline"
-            >
+            <router-link :to="{ path: './dojosmaps' }" class="text-blue-600 underline">
               {{ seance.gym }}
             </router-link>
           </p>
@@ -190,10 +181,10 @@ export default {
     return {
       isMobile: null,
       toggleMobileMenu: false,
-      viewMode: 'text',
+      viewMode: 'planning',
       isSelected: null,
-      textIsSelected: true,
-      planningIsSelected: false,
+      textIsSelected: false,
+      planningIsSelected: true,
       currentIndex: 0,
       cardWidth: 0,
       sideGap: 0,
@@ -363,12 +354,12 @@ export default {
         },
         {
           name: 'Samedi 1 fois par mois',
-          courses:{
+          courses: {
             title: 'Judo Adulte (Ado >10 ans)',
             regroupement: 'Regroupement interclubs',
             time: '16h30 - 18h30',
             gym: 'Stade Charlety',
-          }
+          },
         },
       ],
 
@@ -521,7 +512,7 @@ export default {
     },
     updateCardWidth() {
       const width = window.innerWidth
-      this.cardWidth = Math.floor(width * 0.70)
+      this.cardWidth = Math.floor(width * 0.7)
       this.sideGap = Math.floor(width * 0.09)
     },
     /* sliderTransform() {

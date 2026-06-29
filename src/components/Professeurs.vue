@@ -2,13 +2,12 @@
   <div class="container pt-16">
     <h1>Les Professeurs</h1>
     <div class="flex lg:flex-row flex-col justify-center">
-      <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="professeurs"><img
-              src="../../src/assets/professeur-charly.jpg"
-              alt="Professeur Charly Wable"
-              width="450px"
-              height="450px"
-              class="self-center"
+      <div class="col-xs-12 col-sm-6 col-md-4 flex flex-col">
+        <div class="professeurs">
+          <img
+            src="../../src/assets/professeur-charly.jpg"
+            alt="Professeur Charly Wable"
+            class="self-center w-full h-128 object-cover"
           />
           <div class="caption">
             <h4>Charly WABLE</h4>
@@ -22,19 +21,20 @@
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 lg:mx-10 mx-0 lg:pt-0 pt-10">
-        <div class="professeurs"><img
-              src="../../src/assets/professeur-Romane-DYOT.jpg"
-              alt="Professeur Romane Dyot"
-              width="268px"
-              height="268px"
-              class="self-center"
+      <div class="col-xs-12 col-sm-6 col-md-4 lg:mx-10 mx-0 lg:pt-0 pt-10 flex flex-col">
+        <div class="professeurs">
+          <img
+            src="../../src/assets/professeur-Romane-DYOT.jpg"
+            alt="Professeur Romane Dyot"
+            class="self-center h-128 object-cover"
           />
           <div class="caption">
             <h4>Romane DYOT</h4>
             <p>Cours du mercredi soir et samedi enfant, ados et adultes</p>
             <p class="py-4">
-              Ceinture noire 2ème DAN Diplôme : BPJEPS et DESJEPS judo. Elle enseigne depuis 4 ans au club d'Ivry s/ Seine Athlète de haut niveau qui s'entraine à l'Institut du judo et à l'INSEP
+              Ceinture noire 2ème DAN Diplôme : BPJEPS et DESJEPS judo. Elle enseigne depuis 4 ans
+              au club d'Ivry s/ Seine Athlète de haut niveau qui s'entraine à l'Institut du judo et
+              à l'INSEP
             </p>
             <p>Elle participera au Championnat de France 1ère division</p>
           </div>
@@ -57,7 +57,7 @@ export default {
     this.isMobile = this.checkIfMobile()
     window.addEventListener('resize', this.handleResize)
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('resize', this.handleResize)
   },
   methods: {
@@ -77,7 +77,7 @@ export default {
 <style scoped>
 h4 {
   font-size: 30px;
-  color: #D74340;
+  color: #d74340;
   padding-bottom: 4px;
   padding-top: 4px;
 }
@@ -96,7 +96,8 @@ button:hover {
 }
 
 .professeurs {
-  display:flex;
+  display: flex;
+  height: 100%;
   flex-direction: column;
   justify-self: center;
   text-align: center;
@@ -107,6 +108,6 @@ button:hover {
   padding: 50px;
   @media (max-width: 768px) {
     padding: 20px;
-}
+  }
 }
 </style>

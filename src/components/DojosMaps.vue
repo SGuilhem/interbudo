@@ -15,7 +15,7 @@
         >
           <div class="self-center">
             <a :href="dojo.link" target="_blank" rel="noopener noreferrer">
-              <img :src="dojo.img" :alt="dojo.alt" />
+              <img :src="dojo.img" :alt="dojo.alt" class="self-center w-full h-92 object-cover" />
             </a>
             <p class="text-sm font-light text-gray-500 pt-2">
               (Cliquez sur l'image pour ouvrir dans GoogleMap)
@@ -24,11 +24,17 @@
           <div class="adresses lg:text-left lg:ml-16 lg:self-center lg:pt-0 pt-4">
             <h4>{{ dojo.name }}</h4>
             <p class="py-2" v-html="dojo.address"></p>
-            <div>
-              <p class="font-bold"></p>
-              <div>
-                <p>{{ dojo.acces1 }}</p>
-                <p>{{ dojo.acces2 }}</p>
+            <div class="flex flex-col gap-2 items-center lg:items-start">
+              <div v-for="(acces, i) in dojo.acces" :key="i" class="flex items-center gap-1">
+                <img
+                  v-for="(icon, j) in acces.icons"
+                  :key="j"
+                  :src="icon"
+                  :alt="acces.label"
+                  class="h-10 w-10 object-contain"
+                />
+
+                <span>{{ acces.label }}</span>
               </div>
             </div>
           </div>
@@ -39,9 +45,13 @@
 </template>
 
 <script>
-import mapCaillaux from '@/assets/map-caillaux.jpg'
-import mapStadium from '@/assets/map-stadium.jpg'
-import mapCharlety from '@/assets/map-charlety.jpg'
+import mapCaillaux from '@/assets/map-caillaux.png'
+import mapStadium from '@/assets/map-stadium.png'
+import mapCharlety from '@/assets/map-charlety.png'
+import MetroLigne7 from '@/assets/MetroLigne7.png'
+import MetroLigne14 from '@/assets/MetroLigne14.png'
+import TramT3 from '@/assets/TramT3.png'
+import Bus21 from '@/assets/Bus21.png'
 
 export default {
   name: 'DojosMaps',
@@ -55,29 +65,36 @@ export default {
           address: '3 rue Caillaux<br />75013 Paris',
           img: mapCaillaux,
           alt: 'Photo Gmap Caillaux',
-          acces1: 'Métro Maison Blanche',
-          acces2: 'Métro Porte de Choisy',
           link: 'https://maps.app.goo.gl/Tue2ydE8xtKCrayC8',
+          acces: [
+            { icons: [MetroLigne7, MetroLigne14], label: 'Métro Maison Blanche' },
+            { icons: [MetroLigne7], label: 'Métro Porte de Choisy' },
+          ],
         },
         {
           id: 2,
           name: 'Gymnase Stadium',
-          address: '66 avenue d’Ivry<br />75013 Paris',
+          address: "66 avenue d'Ivry<br />75013 Paris",
           img: mapStadium,
           alt: 'Photo Gmap Stadium',
-          acces1: 'Métro Olympiades',
-          acces2: 'Métro Tolbiac',
           link: 'https://maps.app.goo.gl/kE2VQcniLg2XynxH9',
+          acces: [
+            { icons: [MetroLigne14], label: 'Métro Olympiades' },
+            { icons: [MetroLigne7], label: 'Métro Tolbiac' },
+          ],
         },
         {
           id: 3,
           name: 'Stade Charlety',
-          address: '3 avenue Pierre de Coubertin<br />75013 Paris',
+          address:
+            '3 avenue Pierre de Coubertin<br />75013 Paris<br /><br /> (Le dojo se situe au niveau du "PUC Squash")',
           img: mapCharlety,
           alt: 'Photo Gmap Stade Charlety',
-          acces1: 'Métro Tramway T3',
-          acces2: 'Bus 21',
           link: 'https://maps.app.goo.gl/moCkf2ANxJxRrr2PA',
+          acces: [
+            { icons: [TramT3], label: 'Tramway T3' },
+            { icons: [Bus21], label: 'Bus 21' },
+          ],
         },
       ],
     }

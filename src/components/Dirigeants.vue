@@ -8,7 +8,7 @@
         <img
           src="../../src/assets/dirigeant-caroline-masini.jpg"
           alt="Présidente Caroline Masini"
-          class="w-72 h-72 object-contain"
+          class="self-center w-full h-92 object-cover"
         />
         <div class="mt-4 text-center">
           <h4>Caroline MASINI</h4>
@@ -26,7 +26,7 @@
         <img
           src="../../src/assets/professeur-charly.jpg"
           alt="Professeur Charly Wable"
-          class="w-72 h-72 object-cover"
+          class="self-center w-full h-92 object-cover"
         />
         <div class="mt-4 text-center">
           <h4>Charly WABLE</h4>
@@ -44,7 +44,7 @@
         <img
           src="../../src/assets/dirigeant-guillaume-uzan.jpg"
           alt="Trésorier Guillaume Uzan"
-          class="w-72 h-72 object-contain"
+          class="self-center w-full h-92 object-cover"
         />
         <div class="mt-4 text-center">
           <h4>Guillaume UZAN</h4>
@@ -76,7 +76,7 @@ export default {
     this.isMobile = this.checkIfMobile()
     window.addEventListener('resize', this.handleResize)
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('resize', this.handleResize)
   },
   methods: {
@@ -106,7 +106,7 @@ export default {
 
 h4 {
   font-size: 30px;
-  color: #D74340;
+  color: #d74340;
   padding-bottom: 4px;
   padding-top: 4px;
 }
@@ -117,6 +117,6 @@ p {
 }
 
 .dirigeants {
-  gap: 15px
+  gap: 15px;
 }
 </style>

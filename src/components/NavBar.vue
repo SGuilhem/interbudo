@@ -87,7 +87,7 @@ export default {
         { id: 1, label: 'Accueil', to: '/' },
         { id: 2, label: 'Le Staff', to: '/staff' },
         { id: 3, label: 'Les Cours', to: '/cours' },
-        { id: 4, label: 'Dojos & Horaires', to: '/dojosmaps' },
+        { id: 4, label: 'Dojos & Horaires', to: '/dojos-horaires' },
         { id: 5, label: 'Tarifs', to: '/tarifs' },
         { id: 6, label: 'Inscriptions', to: '/inscriptions' },
         { id: 7, label: 'Documents', to: '/documents' },

@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import HomePage from '@/pages/HomePage.vue'
 import CoursPage from '@/pages/CoursPage.vue'
-import DojosMapsPage from '@/pages/DojosMapsPage.vue'
+/* import DojosMapsPage from '@/pages/DojosMapsPage.vue' */
+import DojosHorairesPage from '@/pages/DojosHorairesPage.vue'
+
 import PhotosPage from '@/pages/PhotosPage.vue'
 import PartenairesPage from '@/pages/PartenairesPage.vue'
 import StaffPage from '@/pages/StaffPage.vue'
@@ -15,7 +17,8 @@ import ArticlesPage from '@/pages/ArticlesPage.vue'
 const routes = [
   { path: '/', component: HomePage },
   { path: '/cours', component: CoursPage },
-  { path: '/dojosmaps', component: DojosMapsPage },
+  /* { path: '/dojosmaps', component: DojosMapsPage }, */
+  { path: '/dojos-horaires', component: DojosHorairesPage },
   { path: '/photos', component: PhotosPage },
   {
     path: '/galerie/:slug',
@@ -24,7 +27,7 @@ const routes = [
   },
   { path: '/partenaires', component: PartenairesPage },
   { path: '/staff', component: StaffPage },
-  { path: '/horaires', component: HorairesPage },
+  /* { path: '/horaires', component: HorairesPage }, */
   { path: '/tarifs', component: TarifsPage },
   { path: '/inscriptions', component: InscriptionsPage },
   { path: '/documents', component: DocumentsPage },
