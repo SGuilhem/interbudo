@@ -1,18 +1,18 @@
 <template>
   <main class="pt-16">
-    <StaffProfesseurs />
-    <StaffDirigeants />
-    <StaffBenevoles />
+    <Professeurs />
+    <Dirigeants />
+    <Benevoles />
   </main>
 </template>
 
 <script>
-import StaffProfesseurs from '@/components/staff/StaffProfesseurs.vue'
-import StaffDirigeants from '@/components/staff/StaffDirigeants.vue'
-import StaffBenevoles from '@/components/staff/StaffBenevoles.vue'
+import Professeurs from '@/components/Professeurs.vue'
+import Dirigeants from '@/components/Dirigeants.vue'
+import Benevoles from '@/components/Benevoles.vue'
 
 export default {
   name: 'StaffPage',
-  components: { StaffProfesseurs, StaffDirigeants, StaffBenevoles },
+  components: { Professeurs, Dirigeants, Benevoles },
 }
 </script>
