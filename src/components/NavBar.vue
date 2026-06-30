@@ -4,51 +4,53 @@
     v-show="isMobile"
     class="bg-white shadow-md fixed top-0 left-0 h-16 content-center w-full z-50"
   >
-    <div class="hamburger text-white z-10">
-      <div class="flex items-center w-full relative">
-        <img
-          src="/svg/hamburger.svg"
-          alt="Menu"
-          class="w-16 h-16 p-3 absolute left-0 cursor-pointer"
-          @click="toggleMenu"
-        />
-        <img src="/logo-interbudo.png" alt="Logo Interbudo" class="h-12 mx-auto" />
-      </div>
+    <div class="flex items-center w-full relative">
+      <img
+        src="/svg/hamburger.svg"
+        alt="Menu"
+        class="w-16 h-16 p-3 absolute left-0 cursor-pointer"
+        @click="toggleMenu"
+      />
+      <img src="/logo-interbudo.png" alt="Logo Interbudo" class="h-12 mx-auto" />
     </div>
   </div>
 
-  <!-- Mobile Menu -->
-  <transition name="slide-down">
-    <nav v-if="toggleMobileMenu" class="side-menu-mobile bg-beige">
-      <button @click="closeMenu" class="absolute right-4 top-2 z-50 text-white text-xl">
-        <img src="/svg/cross-close.svg" alt="Fermer" class="w-12 h-12 text-right" />
-      </button>
-      <div class="mobile-container w-full">
-        <ul class="divide-y divide-gray-400 text-lg font-medium w-full">
-          <li v-for="link in links" :key="link.id" class="w-full">
-            <router-link
-              v-if="link.id === 1"
-              :to="link.to"
-              class="block py-4 red-custom font-bold"
-              @click="
-                () => {
-                  closeMenu()
-                  window.scrollTo({ top: 0, behavior: 'smooth' })
-                }
-              "
-            >
-              {{ link.label }}
-            </router-link>
-            <router-link
-              v-else
-              :to="link.to"
-              class="block py-4 red-custom font-bold"
-              @click="closeMenu"
-            >
-              {{ link.label }}
-            </router-link>
-          </li>
-        </ul>
+  <!-- Overlay -->
+  <transition name="fade">
+    <div v-if="toggleMobileMenu" class="fixed inset-0 bg-black/40 z-40" @click="closeMenu" />
+  </transition>
+
+  <!-- Tiroir latéral -->
+  <transition name="slide-left">
+    <nav
+      v-if="toggleMobileMenu"
+      class="fixed top-0 left-0 h-full w-full bg-white z-50 flex flex-col shadow-2xl"
+    >
+      <!-- Header du tiroir -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <img src="/logo-interbudo.png" alt="Logo Interbudo" class="h-10" />
+        <button @click="closeMenu" class="p-1">
+          <img src="/svg/cross-close.svg" alt="Fermer" class="w-7 h-7" />
+        </button>
+      </div>
+
+      <!-- Liens avec apparition décalée -->
+      <ul class="flex-1 overflow-y-auto py-2">
+        <li
+          v-for="(link, index) in links"
+          :key="link.id"
+          class="link-item"
+          :style="{ animationDelay: `${index * 0.06}s` }"
+        >
+          <router-link :to="link.to" class="drawer-link" @click="closeMenu">
+            {{ link.label }}
+          </router-link>
+        </li>
+      </ul>
+
+      <!-- Footer du tiroir -->
+      <div class="px-6 py-4 border-t border-gray-100 text-center">
+        <p class="text-xs text-gray-400">© Interbudo — Club de Judo Paris 13ème</p>
       </div>
     </nav>
   </transition>
@@ -192,23 +194,64 @@ export default {
   opacity: 0;
 }
 
-/* Menu mobile */
-.side-menu-mobile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgb(233, 231, 231);
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 1rem;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
+/* Liens du tiroir */
+.drawer-link {
+  display: block;
+  padding: 13px 24px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #374151;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+.drawer-link:hover {
+  color: #d74340;
+  border-left-color: #d74340;
+  background-color: #fef2f2;
+}
+.router-link-active.drawer-link {
+  color: #d74340;
+  border-left-color: #d74340;
+  background-color: #fef2f2;
+}
+
+/* Animation tiroir */
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: transform 0.3s ease;
+}
+.slide-left-enter-from,
+.slide-left-leave-to {
+  transform: translateX(-100%);
+}
+
+/* Animation overlay */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 .mobile-container {
   width: 100%;
+}
+
+.link-item {
+  opacity: 0;
+  animation: fadeSlideIn 0.3s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 </style>
