@@ -1,5 +1,5 @@
 <template>
-  <main class="pt-16">
+  <main>
     <Documents />
   </main>
 </template>
