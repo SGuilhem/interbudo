@@ -90,7 +90,7 @@ export default {
             '3 avenue Pierre de Coubertin<br />75013 Paris<br /><br /> (Le dojo se situe au niveau du "PUC Squash")',
           img: mapCharlety,
           alt: 'Photo Gmap Stade Charlety',
-          link: 'https://maps.app.goo.gl/moCkf2ANxJxRrr2PA',
+          link: 'https://maps.app.goo.gl/4GBjXMSJop9nz5R76',
           acces: [
             { icons: [TramT3], label: 'Tramway T3' },
             { icons: [Bus21], label: 'Bus 21' },
