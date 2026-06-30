@@ -63,6 +63,38 @@
       </p>
     </div>
 
+     <!-- Enfants élite-->
+    <div class="content relative mt-16 border-red-custom">
+      <img
+        src="../assets/Equipes2.png"
+        alt="Cours Adultes"
+        class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
+      />
+      <h2
+        class="absolute top-0 -left-6 -translate-y-1/2
+        bg-white px-6 py-2 text-xl font-semibold
+        rounded-sm shadow-2xl enfants-color"
+      >
+        Enfants élites
+      </h2>
+      <h2
+        class="absolute top-0 -translate-y-1/2 -right-6 lg:justify-self-center lg:left-0
+        bg-white px-6 py-2 text-xl font-semibold
+        rounded-sm shadow-2xl enfants-color"
+      >
+        De 7 à 14 ans
+      </h2>
+      <p class="lg:mx-0 mx-2 text-md pt-4 pb-4">
+        Dans ces cours (de 7 à 9ans et de 10 à 14ans), nous apprenons les premières techniques que
+        nous attachons à perfectionner au fil des âges ! <br />
+        Nous continuons à développer toutes les habilités physiques et mentales chères au judoka
+        toujours dans l'optique de contribuer à former des individus passionnés et équilibrés.
+        <br />
+        C'est aussi les premiers pas en compétition pour les enfants qui le souhaitent ! <br />
+        <p class="font-bold">Des stages sont organisés sur pratiquement chaque vacances scolaires !</p>
+      </p>
+    </div>
+
     <!-- Adultes -->
     <div class="content relative mt-16 border-red-custom">
       <img
