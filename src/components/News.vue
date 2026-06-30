@@ -10,13 +10,12 @@
         class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
       />
       <h2
-        class="absolute top-0 -left-6 -translate-y-1/2
-        bg-white px-6 py-2 text-xl font-semibold
-        rounded-sm shadow-2xl"
+        class="absolute top-0 -left-6 -translate-y-1/2 bg-white px-6 py-2 text-xl font-semibold rounded-sm shadow-2xl"
       >
         Le Club
       </h2>
-      <p class="lg:mx-0 mx-2 text-md pt-4">
+      <!-- ↓ <p> remplacé par <div> car il contient un <div> enfant -->
+      <div class="lg:mx-0 mx-2 text-md pt-4">
         Interbudo a été créé en 2000 sous l'impulsion d'un groupe de passionnés. Le club est animé
         d'un esprit d'entraide: accueil des débutants, travail technique en commun, vue sociale
         après le cours. <br />
@@ -29,33 +28,65 @@
           - Enfants (7 à 9 ans et 10 à 14 ans) <br />
           - Ados & Adultes (tous niveaux)
         </div>
-      </p>
+      </div>
     </div>
 
     <!-- Actualités -->
     <div class="content relative mt-16 border-red-custom">
       <h2
-        class="absolute top-0 -left-6 -translate-y-1/2
-        bg-white px-6 py-2 text-xl font-semibold
-        rounded-sm shadow-2xl"
+        class="absolute top-0 -left-6 -translate-y-1/2 bg-white px-6 py-2 text-xl font-semibold rounded-sm shadow-2xl"
       >
         Actualités
       </h2>
-      <div class="pt-4 pb-4">
-        <!-- TODO: liste des actualités -->
-        <p class="lg:mx-0 mx-2 text-md italic text-gray-400">Plus d'infos à venir !</p>
+
+      <!-- Brèves -->
+      <div class="flex flex-col divide-y divide-gray-200 mb-6">
+        <div v-for="breve in breves" :key="breve.id" class="py-3">
+          <p class="text-sm text-gray-500 mb-1 pt-4 lg:pt-0">{{ breve.date }}</p>
+          <p class="text-gray-700 text-sm">{{ breve.content }}</p>
+        </div>
+      </div>
+
+      <!-- Dernier article -->
+      <div v-if="lastArticle" class="border-t border-gray-200 pt-4">
+        <p class="text-xs font-semibold text-gray-400 uppercase mb-3">Dernier article</p>
+        <div class="flex flex-row items-center gap-4">
+          <img
+            :src="lastArticle.thumbnail"
+            :alt="lastArticle.type"
+            class="w-20 h-20 object-cover flex-shrink-0"
+          />
+          <div class="flex flex-col gap-1">
+            <span class="type-badge">{{ lastArticle.type }}</span>
+            <p class="text-sm text-gray-400">{{ lastArticle.date }}</p>
+            <h3 class="article-preview-title">{{ lastArticle.title }}</h3>
+            <p class="text-gray-600 text-sm line-clamp-2">{{ lastArticle.content }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-right pt-4">
+        <router-link to="/articles" class="cta-link"> Voir tous les articles → </router-link>
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
+import { articles } from '@/data/articles.js'
+import { breves } from '@/data/breves'
+
 export default {
   name: 'News',
+  computed: {
+    lastArticle() {
+      return articles[0] ?? null
+    },
+  },
   data() {
     return {
       isMobile: null,
+      breves,
     }
   },
   mounted() {
@@ -85,10 +116,8 @@ export default {
   margin-left: auto;
   font-display: 22px;
   max-width: 95%;
-  @media (min-width: 768px) {
-  }
   @media (min-width: 1440px) {
-  max-width: 75%;
+    max-width: 75%;
   }
 }
 .content {
@@ -99,18 +128,7 @@ export default {
   box-shadow: rgb(200, 200, 200) 10px 15px 10px;
   @media (max-width: 1024px) {
     padding: 10px;
-    }
-  /*  @media (min-width: 768px) {
-    --tw-translate-y: -228px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
   }
-   @media (max-width: 1024px) {
-    padding: 15px;
-    }
-   @media (min-width: 1440px) {
-    --tw-translate-y: -208px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  } */
 }
 .banner {
   padding-bottom: 50px;
@@ -118,66 +136,35 @@ export default {
     padding-bottom: 60px;
   }
 }
-
-.banner-opacity {
-  --tw-translate-y: -168px;
-   translate: var(--tw-translate-x) var(--tw-translate-y);
-  
-   @media (min-width: 768px) {
-    --tw-translate-y: -228px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-   @media (min-width: 1024px) {
-    --tw-translate-y: -225px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-   @media (min-width: 1440px) {
-    --tw-translate-y: -208px;
-    translate: var(--tw-translate-x) var(--tw-translate-y);
-  }
-}
-
 h2 {
-    color: #D74340;
-    border-bottom: 4px solid #d74340ae;
-    border-left: 4px solid #d74340ae;
-    border-top: 1px solid #d74340ae;
-    border-right: 1px solid #d74340ae;
-}
-
-.baby-judo-color {
+  color: #d74340;
   border-bottom: 4px solid #d74340ae;
-    border-left: 4px solid #d74340ae;
-    border-top: 1px solid #d74340ae;
-    border-right: 1px solid #d74340ae;
+  border-left: 4px solid #d74340ae;
+  border-top: 1px solid #d74340ae;
+  border-right: 1px solid #d74340ae;
 }
-.enfants-color {
-  border-bottom: 4px solid #d74340ae;
-    border-left: 4px solid #d74340ae;
-    border-top: 1px solid #d74340ae;
-    border-right: 1px solid #d74340ae;
+.type-badge {
+  display: inline-block;
+  background-color: #d74340;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  border-radius: 20px;
+  width: fit-content;
 }
-.adultes-color {
-  border-bottom: 4px solid #d74340ae;
-    border-left: 4px solid #d74340ae;
-    border-top: 1px solid #d74340ae;
-    border-right: 1px solid #d74340ae;
+.article-preview-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d74340;
 }
-/* .enfants-color {
-  border-bottom: 4px solid rgba(0, 0, 255, 0.774);
-    border-left: 4px solid rgba(0, 0, 255, 0.774);
-    border-top: 1px solid rgba(0, 0, 255, 0.774);
-    border-right: 1px solid rgba(0, 0, 255, 0.774);
+.cta-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #d74340;
+  text-decoration: none;
 }
-.adultes-color {
-  border-bottom: 4px solid rgba(26, 25, 25, 0.835);
-    border-left: 4px solid rgba(26, 25, 25, 0.835);
-    border-top: 1px solid rgba(26, 25, 25, 0.835);
-    border-right: 1px solid rgba(26, 25, 25, 0.835);
-} */
-
-button:hover {
-  background-color: #d9534f !important;
-  border-color: #d43f3a !important;
+.cta-link:hover {
+  opacity: 0.7;
 }
 </style>
