@@ -8,15 +8,26 @@
         :to="`/galerie/${category.slug}`"
         class="category-card group"
       >
-        <div class="overflow-hidden">
+        <!-- Image + overlay en une seule zone -->
+        <div class="relative overflow-hidden h-64">
           <img
             :src="category.cover"
             :alt="category.label"
-            class="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-105"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           />
-        </div>
-        <div class="p-4">
-          <h2 class="text-xl font-semibold text-center">{{ category.label }}</h2>
+          <!-- Gradient permanent en bas -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+          />
+          <!-- Titre sur l'image -->
+          <div class="absolute bottom-0 left-0 right-0 p-5">
+            <h2 class="text-white text-xl font-bold tracking-wide">
+              {{ category.label }}
+            </h2>
+            <span
+              class="block h-0.5 w-8 bg-red-custom mt-1 transition-all duration-300 group-hover:w-16"
+            />
+          </div>
         </div>
       </RouterLink>
     </div>
@@ -48,18 +59,19 @@ export default {
   margin-left: auto;
 }
 .category-card {
-  border: 1px solid #cdced0;
-  background: #fff;
-  box-shadow: rgb(200, 200, 200) 0px 0px 8px;
   border-radius: 4px;
   overflow: hidden;
   cursor: pointer;
   text-decoration: none;
   color: inherit;
   display: block;
-  transition: box-shadow 0.2s;
+  box-shadow: rgb(200, 200, 200) 0px 0px 8px;
+  transition:
+    box-shadow 0.3s,
+    transform 0.3s;
 }
 .category-card:hover {
-  box-shadow: rgb(150, 150, 150) 0px 0px 14px;
+  box-shadow: rgb(100, 100, 100) 0px 4px 20px;
+  transform: translateY(-3px);
 }
 </style>
