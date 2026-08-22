@@ -16,13 +16,13 @@
               <p>75013 Paris</p>
             </div>
             <div>
-               <a :href="formulaire.dossierInscription" target="_blank" rel="noopener noreferrer">
-              <button
-                class="ml-0 border-2 text-lg bg-red-custom text-gray-800 border-gray-200 py-2 px-4 rounded-md text-center lg:mt-2 lg:my-0 my-4 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
-              >
-                Télécharger le dossier d'inscription
-              </button>
-            </a>
+              <a :href="formulaire.dossierInscription" target="_blank" rel="noopener noreferrer">
+                <button
+                  class="ml-0 border-2 text-lg bg-red-custom text-gray-800 border-gray-200 py-2 px-4 rounded-md text-center lg:mt-2 lg:my-0 my-4 transition-transform duration-200 hover:text-white hover:scale-105 active:scale-95 cursor-pointer"
+                >
+                  Télécharger le dossier d'inscription
+                </button>
+              </a>
               <p class="lg:mt-4 mt-2 font-bold">
                 Joindre soit un certificat médical soit une attestation relatif à l'état de santé
                 mineur/majeur :
@@ -80,7 +80,7 @@ export default {
     return {
       isMobile: false,
       formulaire: {
-        dossierInscription: 'https://interbudo.fr/pdf/Dossier-inscription%20-2025-2026.pdf',
+        dossierInscription: 'https://interbudo.fr/pdf/Dossier-inscription%20-2026-2027.pdf',
         attestationQsMajeurs: 'https://interbudo.fr/pdf/ATTESTATION%20QS%20sport%20majeurs.pdf',
         attestationQsMineurs:
           'https://interbudo.fr/pdf/ATTESTATION%20questionnaire%20sant%C3%A9%20mineurs.pdf',
@@ -113,9 +113,9 @@ export default {
   padding: 30px;
   margin-right: auto;
   margin-left: auto;
-  @media (max-width:768px) {
-      padding: 15px;
-    }
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 }
 .button {
   background-color: #d9534f !important;
