@@ -66,6 +66,9 @@ export default {
     max-width: 75%;
   }
 }
+img {
+  object-fit: contain;
+}
 .article-card {
   border: 1px solid #cdced0;
   box-shadow: rgb(200, 200, 200) 0px 0px 8px;

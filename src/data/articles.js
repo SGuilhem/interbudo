@@ -6,6 +6,30 @@ export const articles = [
     type: 'Réflexion du Professeur',
     date: '12 janvier 2025',
     thumbnail: profilCharly,
+    title: 'Stage Montpellier : le cérémonial du salut et le mokuso',
+    content: `Je vous ai fait un retour sur le stage que nous avons vécu à Montpellier il y a quelques semaines avec les adultes. 
+Une particularité qui me plaît beaucoup durant celui-ci, c'est le cérémonial du salut : 
+Les intervenants se tiennent debout face aux plus de 200 stagiaires. Le plus gradés des stagiaires annonce "Seiza" et tout le monde prend alors la position "à genoux". Le silence est palpable. Il est brisé par un "rei" qui amène tout le monde à saluer. Pour se remettre debout, ce sera le plus gradé des intervenants qui impulsera le mouvement que tout le monde suivra. Une fois debout, les bustes s'inclineront dans une espèce de synchronisation parfaite pour finaliser le protocole de début de séance. 
+
+À la fin de l'́entraînement, le même protocole recommence mais une fois à genoux, le plus gradés des stagiaires annonce "mokuso". Tous les pratiquants et les intervenants ferment alors les yeux pour un bref moment de méditation silencieuse. "Mokuso" est l'opportunité de faire le vide après l'agitation. De retrouver le calme après l'effort ! Cela dure environ 1 minute.
+
+Pour l'arrêter, la même personne proclame " Yame", les yeux s'ouvrent. "Rei", les bustes s'affaissent. Et le rituel se finit de la même façon qu'au début. 
+
+
+Au club, bien sûr, tout ce protocole n'est pas étranger à nos jeunes judokas ! Chez les plus petits, le "chef du salut", qui change à chaque cours, donne le rythme du salut au sol et debout avec le "seiza" et le "kinitsu" (debout). 
+Chez les ados, c'est le ou la plus gradé.e qui dirige le salut et si la méditation n'est pas systématique, elle est réalisée occasionnellement ! 
+
+Pour la saison prochaine, il n'est pas impossible que le "mokuso" de fin de séance soit demandé par tous les chefs du salut, sur toutes les catégories d'âges 😉
+
+La prochaine fois, je vous partagerai un très bel article de l'esprit du Judo sur le symbole et la signification du Salut dans notre pratique ! 
+
+Bonne journée`,
+  },
+  /* {
+    id: 1,
+    type: 'Réflexion du Professeur',
+    date: '12 janvier 2025',
+    thumbnail: profilCharly,
     title: 'Pourquoi tomber est la première leçon du judo',
     content: `La chute — ukemi — est sans doute la technique la plus importante que j'enseigne, et pourtant la moins glamour. Quand un élève arrive pour la première fois sur le tatami, il rêve de projections spectaculaires, de victoires en compétition. Ce que je lui apprends en premier, c'est comment toucher le sol sans se faire mal.
 
@@ -48,5 +72,5 @@ Cette philosophie distingue profondément le judo d'une simple activité sportiv
 À Interbudo, nous essayons de cultiver cet esprit au quotidien. C'est pourquoi les ceintures noires passent du temps à travailler avec les débutants, pourquoi les parents restent parfois après les cours d'enfants pour partager un moment ensemble, pourquoi nous organisons des moments de vie commune en dehors du tatami.
 
 Le judo, dans son essence, est une école de la relation à l'autre. Avant d'être un sport, c'est une façon d'être au monde.`,
-  },
+  }, */
 ]

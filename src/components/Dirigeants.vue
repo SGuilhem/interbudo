@@ -8,7 +8,7 @@
         <img
           src="../../src/assets/dirigeant-caroline-masini.jpg"
           alt="Présidente Caroline Masini"
-          class="self-center w-full h-92 object-cover"
+          class="self-center w-full lg:h-92 object-contain"
         />
         <div class="mt-4 text-center">
           <h4>Caroline MASINI</h4>
@@ -26,7 +26,7 @@
         <img
           src="../../src/assets/professeur-charly.jpg"
           alt="Professeur Charly Wable"
-          class="self-center w-full h-92 object-cover"
+          class="self-center w-full lg:h-92 object-contain"
         />
         <div class="mt-4 text-center">
           <h4>Charly WABLE</h4>
@@ -44,7 +44,7 @@
         <img
           src="../../src/assets/dirigeant-guillaume-uzan.jpg"
           alt="Trésorier Guillaume Uzan"
-          class="self-center w-full h-92 object-cover"
+          class="self-center w-full lg:h-92 object-contain"
         />
         <div class="mt-4 text-center">
           <h4>Guillaume UZAN</h4>
@@ -101,6 +101,16 @@ export default {
     .container {
       width: 1600px;
     }
+  }
+}
+
+.cards {
+  text-align: center;
+  align-self: center;
+  width: 300px;
+  margin: 10px;
+  @media (min-width: 1025px) {
+    width: 400px;
   }
 }
 

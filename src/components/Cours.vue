@@ -27,7 +27,7 @@
         globale, leurs habilités fondamentales de l'activité Judo (chutes, déplacements, équilibre,
         approche du combat par des jeux de contact et d'opposition) et de les sensibiliser aux
         valeurs de la discipline: respect, contrôle de soi, amitié goût de l'effort... <br />
-        Et de se faire plaisir !
+        Et  surtout, de se faire plaisir !
       </p>
     </div>
 
@@ -43,28 +43,45 @@
         bg-white px-6 py-2 text-xl font-semibold
         rounded-sm shadow-2xl enfants-color"
       >
-        Enfants
+        Cours enfants:  
       </h2>
       <h2
         class="absolute top-0 -translate-y-1/2 -right-6 lg:justify-self-center lg:left-0
         bg-white px-6 py-2 text-xl font-semibold
         rounded-sm shadow-2xl enfants-color"
       >
-        De 7 à 14 ans
+        De 7 à 9 ans
       </h2>
       <p class="lg:mx-0 mx-2 text-md pt-4 pb-4">
-        Dans ces cours (de 7 à 9ans et de 10 à 14ans), nous apprenons les premières techniques que
-        nous attachons à perfectionner au fil des âges ! <br />
-        Nous continuons à développer toutes les habilités physiques et mentales chères au judoka
-        toujours dans l'optique de contribuer à former des individus passionnés et équilibrés.
-        <br />
-        C'est aussi les premiers pas en compétition pour les enfants qui le souhaitent ! <br />
+        Dans ce cours, nous nous concentrons sur l’apprentissage des premières techniques de Judo 
+        et l’initiation au combat tout en continuant de développer et de perfectionner les habiletés fondamentales du judoka !  
         <p class="font-bold">Des stages sont organisés sur pratiquement chaque vacances scolaires !</p>
       </p>
     </div>
 
-     <!-- Enfants élite-->
     <div class="content relative mt-16 border-red-custom">
+      <img
+        src="../assets/Equipes2.png"
+        alt="Cours Adultes"
+        class="absolute inset-0 w-full h-full object-cover opacity-20 z-0 object-[center_15%]"
+      />
+      <h2
+        class="absolute top-0 -translate-y-1/2 -right-6 lg:justify-self-center lg:left-0
+        bg-white px-6 py-2 text-xl font-semibold
+        rounded-sm shadow-2xl enfants-color"
+      >
+        De 10 à 14 ans
+      </h2>
+      <p class="lg:mx-0 mx-2 text-md pt-4 pb-4">
+       Dans ce cours, nous amenons les enfants à créer et à perfectionner leur schéma technico-tactique personnel 
+       tout en continuant à développer les habiletés physiques et mentales chères au Judoka dans l’optique de contribuer à former des individus passionnés 
+       et équilibrés ! 
+        <p class="font-bold">Des stages sont organisés sur pratiquement chaque vacances scolaires !</p>
+      </p>
+    </div>
+
+    <!-- Groupe Excellence -->
+     <div class="content relative mt-16 border-red-custom">
       <img
         src="../assets/Equipes2.png"
         alt="Cours Adultes"
@@ -73,25 +90,13 @@
       <h2
         class="absolute top-0 -left-6 -translate-y-1/2
         bg-white px-6 py-2 text-xl font-semibold
-        rounded-sm shadow-2xl enfants-color"
+        rounded-sm shadow-2xl baby-judo-color"
       >
-        Enfants élites
-      </h2>
-      <h2
-        class="absolute top-0 -translate-y-1/2 -right-6 lg:justify-self-center lg:left-0
-        bg-white px-6 py-2 text-xl font-semibold
-        rounded-sm shadow-2xl enfants-color"
-      >
-        De 7 à 14 ans
+        Groupe Excellence
       </h2>
       <p class="lg:mx-0 mx-2 text-md pt-4 pb-4">
-        Dans ces cours (de 7 à 9ans et de 10 à 14ans), nous apprenons les premières techniques que
-        nous attachons à perfectionner au fil des âges ! <br />
-        Nous continuons à développer toutes les habilités physiques et mentales chères au judoka
-        toujours dans l'optique de contribuer à former des individus passionnés et équilibrés.
-        <br />
-        C'est aussi les premiers pas en compétition pour les enfants qui le souhaitent ! <br />
-        <p class="font-bold">Des stages sont organisés sur pratiquement chaque vacances scolaires !</p>
+        Ce groupe sera créé dès la rentrée et sera composé des enfants souhaitant s’investir davantage dans l'entraînement Judo et en compétition. 
+        Des cours techniques individuels et des regroupements dans d’autres clubs leurs seront proposés ! 
       </p>
     </div>
 
@@ -124,8 +129,8 @@
         la pratique !<br />
         La bonne entente nous amène à organiser régulièrement des temps de regroupement en dehors
         du tatami. <br />
-        Une partie du groupe s'aligne chaque année aux championnats de Paris par équipes mixtes.
-        L'équipe a d'ailleurs fini 3ème lors de l'édition 2024.
+        L'équipe séniors a fini 3ème aux championnats de Paris par équipes mixtes en 2024. <br />
+        Cette année, une petite dizaine d’ados rejoignent le groupe adultes.
       </p>
     </div>
 

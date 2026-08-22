@@ -29,7 +29,6 @@ Avec ce code ci: "
             <th class="border border-gray-300 px-4 py-2">Mercredi</th>
             <th class="border border-gray-300 px-4 py-2">Vendredi</th>
             <th class="border border-gray-300 px-4 py-2">Samedi</th>
-            <th class="border border-gray-300 px-4 py-2">Samedi 1 fois par mois</th>
           </tr>
         </thead>
         <tbody>
@@ -45,7 +44,7 @@ Avec ce code ci: "
                 <p>{{ cell.time }}</p>
                 <p>{{ cell.prof }}</p>
                 <router-link
-                  :to="{ path: '/dojos', hash: getGymHash(cell.gym) }"
+                  :to="{ path: '/dojos-horaires', hash: getGymHash(cell.gym) }"
                   class="text-blue-600 underline"
                 >
                   {{ cell.gym }}
@@ -127,7 +126,10 @@ Avec ce code ci: "
                 <p>{{ cours.time }}</p>
                 <p v-if="cours.prof">{{ cours.prof }}</p>
                 <p v-else>{{ cours.regroupement }}</p>
-                <router-link :to="{ path: './dojosmaps' }" class="text-blue-600 underline">
+                <router-link
+                  :to="{ path: '/dojos-horaires', hash: getGymHash(cours.gym) }"
+                  class="text-blue-600 underline"
+                >
                   {{ cours.gym }}
                 </router-link>
               </div>
@@ -142,7 +144,13 @@ Avec ce code ci: "
                   <p>{{ mobilePlanning[4].courses.time }}</p>
                   <p v-if="mobilePlanning[4].courses.prof">{{ mobilePlanning[4].courses.prof }}</p>
                   <p v-else>{{ mobilePlanning[4].courses.regroupement }}</p>
-                  <router-link :to="{ path: './dojosmaps' }" class="text-blue-600 underline">
+                  <router-link
+                    :to="{
+                      path: '/dojos-horaires',
+                      hash: getGymHash(mobilePlanning[4].courses.gym),
+                    }"
+                    class="text-blue-600 underline"
+                  >
                     {{ mobilePlanning[4].courses.gym }}
                   </router-link>
                 </div>
@@ -161,7 +169,13 @@ Avec ce code ci: "
         <div v-for="(seance, i) in cours.courses" :key="i" class="mt-2">
           <p>- {{ seance.day }} de {{ seance.time }}</p>
           <p>
-            <router-link :to="{ path: './dojosmaps' }" class="text-blue-600 underline">
+            <router-link
+              :to="{
+                path: '/dojos-horaires',
+                hash: getGymHash(seance.gym),
+              }"
+              class="text-blue-600 underline"
+            >
               {{ seance.gym }}
             </router-link>
           </p>
@@ -196,8 +210,8 @@ export default {
         [
           null,
           {
-            title: 'Baby Judo (4-6 ans)',
-            time: '14h00 - 14h45',
+            title: 'Groupe Excellence',
+            time: '13h00 - 14h00',
             prof: 'avec Charly',
             gym: 'Gymnase Stadium',
           },
@@ -208,14 +222,13 @@ export default {
             prof: 'avec Charly',
             gym: 'Stade Charlety',
           },
-          null,
         ],
         // Rangée 2
         [
           null,
           {
-            title: 'Judo Enfant (7-9 ans)',
-            time: '15h00 - 16h00',
+            title: 'Baby Judo (4-6 ans)',
+            time: '14h00 - 14h45',
             prof: 'avec Charly',
             gym: 'Gymnase Stadium',
           },
@@ -225,15 +238,19 @@ export default {
             prof: 'avec Charly',
             gym: 'Gymnase Caillaux',
           },
-          null,
-          null,
+          {
+            title: 'Groupe Excellence',
+            time: '16h30 - 17h30',
+            prof: 'avec Charly',
+            gym: 'Stade Charlety',
+          },
         ],
         // Rangée 3
         [
           null,
           {
-            title: 'Judo Enfant (10-14 ans)',
-            time: '16h00 - 17h15',
+            title: 'Judo Enfant (7-9 ans)',
+            time: '15h00 - 16h00',
             prof: 'avec Charly',
             gym: 'Gymnase Stadium',
           },
@@ -243,34 +260,39 @@ export default {
             prof: 'avec Charly',
             gym: 'Gymnase Caillaux',
           },
-          null,
-          {
-            title: 'Judo Adulte (Ado >10 ans)',
-            time: '16h30 - 18h30',
-            prof: 'Regroupements Interclubs',
-            gym: 'Stade Charlety',
-          },
         ],
         // Rangée 4
         [
           {
             title: 'Judo Adultes',
-            time: '19h15 - 20h45',
+            time: '19h15 - 21h00',
             prof: 'avec Charly',
             gym: 'Gymnase Caillaux',
           },
+          {
+            title: 'Judo Enfant (10-14 ans)',
+            time: '16h00 - 17h30',
+            prof: 'avec Charly',
+            gym: 'Gymnase Stadium',
+          },
+          {
+            title: 'Judo Ados (Adultes)',
+            time: '19h00 - 20h20',
+            prof: 'avec Charly',
+            gym: 'Gymnase Caillaux',
+          },
+          null,
+        ],
+        // Rangée 5
+        [
+          null,
           {
             title: 'Judo Adultes',
             time: '19h00 - 20h20',
             prof: 'avec Romane',
             gym: 'Gymnase Stadium',
           },
-          {
-            title: 'Judo Ados (Adultes)',
-            time: '19h00 - 20h15',
-            prof: 'avec Charly',
-            gym: 'Gymnase Caillaux',
-          },
+
           null,
           null,
         ],
@@ -283,7 +305,7 @@ export default {
           courses: [
             {
               title: 'Judo Adultes',
-              time: '19h15 - 20h45',
+              time: '19h15 - 21h00',
               prof: 'avec Charly',
               gym: 'Gymnase Caillaux',
             },
@@ -306,7 +328,7 @@ export default {
             },
             {
               title: 'Judo Enfant (10-14 ans)',
-              time: '16h00 - 17h15',
+              time: '16h00 - 17h30',
               prof: 'avec Charly',
               gym: 'Gymnase Stadium',
             },
@@ -335,7 +357,7 @@ export default {
             },
             {
               title: 'Judo Adultes',
-              time: '19h00 - 20h15',
+              time: '19h00 - 20h20',
               prof: 'avec Charly',
               gym: 'Gymnase Caillaux',
             },
@@ -351,15 +373,6 @@ export default {
               gym: 'Stade Charlety',
             },
           ],
-        },
-        {
-          name: 'Samedi 1 fois par mois',
-          courses: {
-            title: 'Judo Adulte (Ado >10 ans)',
-            regroupement: 'Regroupement interclubs',
-            time: '16h30 - 18h30',
-            gym: 'Stade Charlety',
-          },
         },
       ],
 
@@ -407,7 +420,7 @@ export default {
           courses: [
             {
               day: 'Mercredi',
-              time: '16h00 - 17h15',
+              time: '16h00 - 17h30',
               gym: 'Gymnase Stadium',
               prof: 'avec Charly',
             },
@@ -417,11 +430,22 @@ export default {
               gym: 'Gymnase Caillaux',
               prof: 'avec Charly',
             },
+          ],
+        },
+        {
+          title: 'Groupe Excellence',
+          courses: [
             {
-              day: 'Samedi 1 fois par mois',
-              time: '16h30 - 18h30',
+              day: 'Mercredi',
+              time: '13h00 - 14h00',
+              gym: 'Gymnase Stadium',
+              prof: 'avec Charly',
+            },
+            {
+              day: 'Samedi',
+              time: '16h30 - 17h30',
               gym: 'Stade Charlety',
-              prof: 'Regroupement interclubs',
+              prof: 'avec Charly',
             },
           ],
         },
@@ -430,15 +454,9 @@ export default {
           courses: [
             {
               day: 'Vendredi',
-              time: '19h00 - 20h15',
+              time: '19h00 - 20h20',
               gym: 'Gymnase Caillaux',
               prof: 'avec Charly',
-            },
-            {
-              day: 'Samedi 1 fois par mois',
-              time: '16h30 - 18h30',
-              gym: 'Stade Charlety',
-              prof: 'Regroupement interclubs',
             },
           ],
         },
@@ -447,7 +465,7 @@ export default {
           courses: [
             {
               day: 'Lundi',
-              time: '19h15 - 20h45',
+              time: '19h15 - 21h00',
               gym: 'Gymnase Caillaux',
               prof: 'avec Charly',
             },
@@ -459,15 +477,9 @@ export default {
             },
             {
               day: 'Vendredi',
-              time: '19h00 - 20h15',
+              time: '19h00 - 20h20',
               gym: 'Gymnase Caillaux',
               prof: 'avec Charly',
-            },
-            {
-              day: 'Samedi 1 fois par mois',
-              time: '16h30 - 18h30',
-              gym: 'Stade Charlety',
-              prof: 'Regroupement interclubs',
             },
           ],
         },

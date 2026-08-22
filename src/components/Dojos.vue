@@ -61,7 +61,7 @@ export default {
           address: '3 rue Caillaux<br />75013 Paris',
           img: dojoCaillaux,
           alt: 'Photo Dojo Caillaux',
-          link: './dojos#caillaux',
+          link: './dojos-horaires#caillaux',
         },
         {
           id: 2,
@@ -69,7 +69,7 @@ export default {
           address: '66 avenue d’Ivry<br />75013 Paris',
           img: dojoStadium,
           alt: 'Photo Dojo Stadium',
-          link: './dojos#stadium',
+          link: './dojos-horaires#stadium',
         },
         {
           id: 3,
@@ -77,7 +77,7 @@ export default {
           address: '3 avenue Pierre de Coubertin<br />75013 Paris',
           img: dojoCharlety,
           alt: 'Photo Dojo Stade Charlety',
-          link: './dojos#charlety',
+          link: './dojos-horaires#charlety',
         },
       ],
     }

@@ -2,7 +2,7 @@
   <main>
     <Professeurs />
     <Dirigeants />
-    <Benevoles />
+    <!-- <Benevoles /> -->
   </main>
 </template>
 

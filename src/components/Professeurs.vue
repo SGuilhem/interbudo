@@ -2,26 +2,28 @@
   <div class="container pt-16">
     <h1>Les Professeurs</h1>
     <div class="flex lg:flex-row flex-col justify-center">
-      <div class="col-xs-12 col-sm-6 col-md-4 flex flex-col">
+      <div class="col-xs-12 col-sm-6 col-md-4 flex flex-col professeurs-container">
         <div class="professeurs">
           <img
             src="../../src/assets/professeur-charly.jpg"
             alt="Professeur Charly Wable"
-            class="self-center w-full h-128 object-cover"
+            class="self-center w-full lg:h-128 object-contain"
           />
           <div class="caption">
             <h4>Charly WABLE</h4>
-            <p>Tous les cours sauf celui du mercredi soir</p>
-            <p class="py-4">
-              Titutaire d'un CQP moniteur de Judo et d'un diplôme d'état d'Educateur Spécialisé
-              Athlète 1ère division au sein de Sucy Judo, il s'entraîne au sein du collectif
-              national de l'INSEP
+            <p class="font-bold">
+              CQP Moniteur de Judo <br />Diplôme d’Etat d’éducateur spécialisé
             </p>
-            <p>Ceinture noire 2e dan</p>
+            <p class="font-bold">Ceinture noire 2e dan</p>
+            <p class="py-4">
+              Passionné par le Judo et son enseignement, Charly a été membre du collectif national
+              de l’INSEP et athlète 1ère division pendant plus de 10 ans. Il est en charge de la
+              dynamique sociale et sportive du club !
+            </p>
           </div>
         </div>
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-4 lg:mx-10 mx-0 lg:pt-0 pt-10 flex flex-col">
+      <!--  <div class="col-xs-12 col-sm-6 col-md-4 lg:mx-10 mx-0 lg:pt-0 pt-10 flex flex-col">
         <div class="professeurs">
           <img
             src="../../src/assets/professeur-Romane-DYOT.jpg"
@@ -39,7 +41,7 @@
             <p>Elle participera au Championnat de France 1ère division</p>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -94,7 +96,14 @@ button:hover {
   background-color: #d9534f !important;
   border-color: #d43f3a !important;
 }
-
+.professeurs-container {
+  max-width: 600px;
+  @media (max-width: 768px) {
+    align-self: center;
+    margin: 0px;
+    padding: 0px;
+  }
+}
 .professeurs {
   display: flex;
   height: 100%;

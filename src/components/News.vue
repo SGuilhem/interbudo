@@ -16,17 +16,22 @@
       </h2>
       <!-- ↓ <p> remplacé par <div> car il contient un <div> enfant -->
       <div class="lg:mx-0 mx-2 text-md pt-4">
-        Interbudo a été créé en 2000 sous l'impulsion d'un groupe de passionnés. Le club est animé
-        d'un esprit d'entraide: accueil des débutants, travail technique en commun, vue sociale
-        après le cours. <br />
-        Nous partageons la même passion du judo avec plusieurs clubs "amis" et organisons
-        régulièrement des échanges entre clubs (présence sur nos cours d'enseignants émérites ou
-        cours délocalisés). <br />
-        Au sein du club, nous proposons des cours adaptés à chaque âge et à chaque niveau : <br />
+        Interbudo a été créé en 2000 sous l’impulsion d’un groupe de passionnés. Aujourd’hui, il est
+        composé d’une centaine de licenciés et de deux professeurs de Judo qui axent leur pédagogie
+        sur la base des deux principes fondamentaux érigés par Jigoro Kano : “la meilleure
+        utilisation de l’énergie” (ou la recherche de l’efficacité maximale) et la célèbre “entraide
+        et prospérité mutuelle”, indispensable à l’épanouissement et la progression de chacun.e sur
+        le tatami ! <br />
+        Le club est donc animé d’un esprit d’entraide et de partage : accueil des débutant.e.s, vie
+        sociale en dehors des cours, stage de judo pendant les vacances, regroupements interclubs
+        réguliers avec plusieurs clubs amis permettant des rencontres avec d’autres élèves et
+        d’autres professeurs ! <br />
+        Nous proposons des cours adaptés à tous les niveaux répartis sur 4 catégories d’âges: <br />
         <div class="ml-2 mt-2">
-          - Baby Judo (4 à 6 ans) <br />
-          - Enfants (7 à 9 ans et 10 à 14 ans) <br />
-          - Ados & Adultes (tous niveaux)
+          - Baby-Judo (4-6 ans) <br />
+          - Mini-poussins et poussins (7-9 ans) <br />
+          - Benjamins-Minimes (10-14 ans) <br />
+          - Adultes à partir de cadets (15 ans et +) <br />
         </div>
       </div>
     </div>
