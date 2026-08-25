@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://interbudo.github.io/interbudo/</loc><priority>1.0</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/cours</loc><priority>0.8</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/staff</loc><priority>0.7</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/dojos-horaires</loc><priority>0.8</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/tarifs</loc><priority>0.8</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/inscriptions</loc><priority>0.8</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/photos</loc><priority>0.6</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/articles</loc><priority>0.7</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/documents</loc><priority>0.5</priority></url>
-  <url><loc>https://interbudo.github.io/interbudo/partenaires</loc><priority>0.4</priority></url>
+  <url><loc>https://interbudo.fr/</loc><priority>1.0</priority></url>
+  <url><loc>https://interbudo.fr/cours</loc><priority>0.8</priority></url>
+  <url><loc>https://interbudo.fr/staff</loc><priority>0.7</priority></url>
+  <url><loc>https://interbudo.fr/dojos-horaires</loc><priority>0.8</priority></url>
+  <url><loc>https://interbudo.fr/tarifs</loc><priority>0.8</priority></url>
+  <url><loc>https://interbudo.fr/inscriptions</loc><priority>0.8</priority></url>
+  <url><loc>https://interbudo.fr/photos</loc><priority>0.6</priority></url>
+  <url><loc>https://interbudo.fr/photos/stages</loc><priority>0.6</priority></url>
+  <url><loc>https://interbudo.fr/photos/competitions</loc><priority>0.6</priority></url>
+  <url><loc>https://interbudo.fr/photos/cours</loc><priority>0.6</priority></url>
+  <url><loc>https://interbudo.fr/articles</loc><priority>0.7</priority></url>
+  <url><loc>https://interbudo.fr/documents</loc><priority>0.5</priority></url>
+  <url><loc>https://interbudo.fr/partenaires</loc><priority>0.4</priority></url>
 </urlset>
