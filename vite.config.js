@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+import { createRequire } from 'node:module'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -10,7 +11,10 @@ export default defineConfig(async ({ command }) => {
   const plugins = [vue(), vueDevTools(), tailwindcss()]
 
   if (command === 'build') {
-    const { default: prerender } = await import('vite-plugin-prerender')
+    const require = createRequire(import.meta.url)
+    const prerenderModule = require('vite-plugin-prerender')
+    const prerender = prerenderModule.default || prerenderModule
+
     plugins.push(
       prerender({
         staticDir: 'dist',
