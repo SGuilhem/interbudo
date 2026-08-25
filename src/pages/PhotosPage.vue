@@ -37,7 +37,7 @@
 <script>
 import coverCompetitions from '@/assets/galeriephotos/competitions/cover.jpg'
 import coverCours from '@/assets/galeriephotos/cours/cover.jpg'
-import coverStage from '@/assets/galeriephotos/stage/cover.jpg'
+import coverStages from '@/assets/galeriephotos/stages/cover.jpg'
 
 export default {
   name: 'GaleriePage',
@@ -46,7 +46,7 @@ export default {
       categories: [
         { slug: 'competitions', label: 'Compétitions', cover: coverCompetitions },
         { slug: 'cours', label: 'Cours', cover: coverCours },
-        { slug: 'stage', label: 'Stage', cover: coverStage },
+        { slug: 'stages', label: 'Stages', cover: coverStages },
       ],
     }
   },

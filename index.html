@@ -2,50 +2,83 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <link rel="icon" href="/favicon.ico" />
+
+    <title>Interbudo - Club de judo Paris 13ème</title>
+    <meta
+      name="description"
+      content="Club de judo à Paris 13ème arrondissement. Cours enfants et adultes, compétitions, stages. Rejoignez Interbudo au 3 rue Caillaux."
+    />
+
+    <meta property="og:title" content="Interbudo - Club de judo Paris 13ème" />
+    <meta
+      property="og:description"
+      content="Cours enfants et adultes, compétitions, stages de judo à Paris 13ème."
+    />
+    <meta property="og:image" content="https://sguilhem.github.io/interbudo/og-image.jpg" />
+    <meta property="og:url" content="https://interbudo.github.io/interbudo" />
+    <meta property="og:type" content="website" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SportsClub",
+        "name": "Interbudo",
+        "description": "Club de judo à Paris 13ème arrondissement",
+        "url": "https://interbudo.github.io/interbudo",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "3 rue Caillaux",
+          "addressLocality": "Paris",
+          "postalCode": "75013",
+          "addressCountry": "FR"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 48.8234,
+          "longitude": 2.3609
+        },
+        "sport": "Judo",
+        "openingHours": ["Mo 19:15-20:45", "We 14:00-20:20", "Fr 17:00-20:15", "Sa 15:30-16:30"]
+      }
+    </script>
+
+    <style>
+      body {
+        font-family: 'Exo 2', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 30px;
+        background-color: #f5f5f5;
+        background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
+      }
+      @media (max-width: 768px) {
+        body {
+          padding: 0 15px;
+        }
+      }
+    </style>
   </head>
   <body class="bg-gray-200">
+    <noscript>
+      <strong
+        >Interbudo ne fonctionne pas correctement sans JavaScript activé. Merci de l'activer pour
+        continuer.</strong
+      >
+    </noscript>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
-<script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "SportsClub",
-    "name": "Interbudo",
-    "description": "Club de judo à Paris 13ème arrondissement",
-    "url": "https://interbudo.github.io/interbudo",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "3 rue Caillaux",
-      "addressLocality": "Paris",
-      "postalCode": "75013",
-      "addressCountry": "FR"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 48.8234,
-      "longitude": 2.3609
-    },
-    "sport": "Judo",
-    "openingHours": ["Mo 19:15-20:45", "We 14:00-20:20", "Fr 17:00-20:15", "Sa 15:30-16:30"]
-  }
-</script>
-
-<style scoped>
-  body {
-    font-family: 'Exo 2', sans-serif;
-    font-size: 18px;
-    font-weight: 300;
-    margin-bottom: 30px;
-    background-color: #f5f5f5;
-    background-image: url(https://www.transparenttextures.com/patterns/concrete-wall-2.png);
-    @media (max-width: 768px) {
-      padding: 0 15px;
-    }
-  }
-</style>

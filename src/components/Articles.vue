@@ -19,7 +19,7 @@
                 :alt="article.type"
                 class="w-30 h-30 lg:w-full lg:h-70 object-cover flex-shrink-0"
               />
-              <div class="lg:mt-3">
+              <div class="lg:mt-3 text-center self-center">
                 <span class="type-badge">{{ article.type }}</span>
                 <p class="text-sm text-gray-400 mt-1">{{ article.date }}</p>
               </div>

@@ -89,26 +89,6 @@
       </div>
     </div>
   </div>
-
-  <div class="py-4">
-    <div class="container">
-      <div class="card panel-heading">
-        <h4 class="panel-heading py-2">Réductions possibles</h4>
-        <div class="">
-          <p class="text-base font-medium text-gray-700 bg-white p-4">
-            Réglement possible par <strong>chèque</strong>, Pour les Familles :
-            <strong>600€</strong> pour <strong>2</strong> inscriptions.
-
-            <br /><br />Pour les Familles : <strong>800€</strong> pour l'inscription de
-            <strong>2</strong> enfants ou <strong>2</strong> adultes.
-
-            <br /><br />Tarif Fidélité (Adultes) : <strong>après 3 ans</strong> d'ancienneté
-            <strong>350€</strong> !
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -120,14 +100,14 @@ export default {
       tarifs: [
         {
           id: 1,
-          title: 'Enfants',
+          title: 'Baby Judo',
           age: 'Enfants de 4 à 6 ans',
           prix: '320€',
         },
         {
           id: 2,
-          title: 'Grands',
-          age: 'Enfants de 7 à 13 ans et Étudiant',
+          title: 'Enfants',
+          age: 'Enfants de 7 à 14 ans et Étudiant',
           prix: '330€',
         },
         {

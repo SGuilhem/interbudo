@@ -4,7 +4,7 @@ export const articles = [
   {
     id: 1,
     type: 'Réflexion du Professeur',
-    date: '12 janvier 2025',
+    date: '22 Aout 2026',
     thumbnail: profilCharly,
     title: 'Stage Montpellier : le cérémonial du salut et le mokuso',
     content: `Je vous ai fait un retour sur le stage que nous avons vécu à Montpellier il y a quelques semaines avec les adultes. 
