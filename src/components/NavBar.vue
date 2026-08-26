@@ -137,10 +137,7 @@ export default {
 .nav-link {
   position: relative;
   display: inline-block;
-  font-size: 18px;
-  @media (min-width: 1025px) and (max-width: 1920px) {
-    font-size: 12px;
-  }
+  font-size: clamp(0.8rem, 1vw + 0.5rem, 1.125rem);
 }
 .nav-link::after {
   content: '';
@@ -199,7 +196,7 @@ export default {
   display: block;
   padding: 13px 24px;
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: clamp(1.1rem, 4vw, 1.35rem);
   color: #374151;
   border-left: 3px solid transparent;
   transition: all 0.2s ease;

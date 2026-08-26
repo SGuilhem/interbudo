@@ -1,25 +1,31 @@
 <template>
   <div class="container lg:w-3/4 pt-16">
-    <div class="flex flex-wrap items-center gap-3 mb-6">
-      <router-link to="/photos" class="btn-primary" aria-label="Retour aux galeries">
+    <div class="flex flex-wrap items-center justify-center lg:justify-between gap-3">
+      <router-link
+        to="/photos"
+        class="btn-primary btn-back mt-3 lg:mt-5"
+        aria-label="Retour aux galeries"
+      >
         <span class="text-xl leading-none">&#8592;</span>
-        <span class="hidden sm:inline">Retour</span>
+        <span class="hidden sm:inline ml-2">Retour</span>
       </router-link>
 
-      <h1 class="mb-0 flex-1 text-center ml-0 sm:ml-[15%]">{{ categoryLabel }}</h1>
-
-      <div class="flex gap-2 flex-wrap justify-center w-full sm:w-auto">
-        <router-link
-          v-for="(label, key) in categoryLabels"
-          :key="key"
-          :to="`/galerie/${key}`"
-          class="btn-primary"
-          :class="{ 'category-pill--active': key === slug }"
-        >
-          {{ label }}
-        </router-link>
+      <div class="flex justify-center">
+        <div class="flex gap-2 flex-wrap justify-center lg:mt-5">
+          <router-link
+            v-for="(label, key) in categoryLabels"
+            :key="key"
+            :to="`/galerie/${key}`"
+            class="btn-primary"
+            :class="{ 'category-pill--active': key === slug }"
+          >
+            {{ label }}
+          </router-link>
+        </div>
       </div>
     </div>
+
+    <h1 class="text-center mb-6">{{ categoryLabel }}</h1>
 
     <div v-if="photos.length === 0" class="text-gray-500 py-12 text-center">
       Aucune photo dans cette catégorie.
@@ -179,43 +185,6 @@ export default {
   background: #fff;
   box-shadow: rgb(200, 200, 200) 0px 0px 8px;
 }
-.back-btn {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 12px;
-  border: 1px solid #cdced0;
-  border-radius: 6px;
-  color: #333;
-  text-decoration: none;
-  font-size: 0.9rem;
-  white-space: nowrap;
-}
-.back-btn:hover {
-  background: #f5f5f5;
-}
-.category-pill {
-  padding: 6px 14px;
-  border: 2px solid #e5e7eb;
-  border-radius: 999px;
-  color: #555;
-  text-decoration: none;
-  font-size: 0.85rem;
-  white-space: nowrap;
-  transition:
-    transform 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-}
-.category-pill:hover {
-  color: #d74340;
-  border-color: #d74340;
-  transform: scale(1.05);
-}
-.category-pill:active {
-  transform: scale(0.95);
-}
 .category-pill--active {
   background-color: #d74340;
   color: white;
@@ -243,5 +212,8 @@ export default {
 }
 .btn-primary:active {
   transform: scale(0.95);
+}
+.btn-back {
+  margin-right: auto;
 }
 </style>
