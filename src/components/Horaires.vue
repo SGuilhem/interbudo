@@ -1,7 +1,7 @@
 Avec ce code ci: "
 <template>
   <!-- Desktop -->
-  <div class="container pt-16">
+  <div class="container py-16">
     <h1>Horaires</h1>
     <div class="flex justify-center font-semibold text-xl text-gray-800">Format à afficher:</div>
 
@@ -217,12 +217,7 @@ export default {
             gym: 'Gymnase Stadium',
           },
           null,
-          {
-            title: 'Baby Judo (4-6 ans)',
-            time: '15h30 - 16h30',
-            prof: 'avec Charly',
-            gym: 'Stade Charlety',
-          },
+          null,
         ],
         // Rangée 2
         [
@@ -233,18 +228,8 @@ export default {
             prof: 'avec Charly',
             gym: 'Gymnase Stadium',
           },
-          {
-            title: 'Judo Enfant (7-9 ans)',
-            time: '17h00 - 18h00',
-            prof: 'avec Charly',
-            gym: 'Gymnase Caillaux',
-          },
-          {
-            title: 'Groupe Espoir et Cours Kata',
-            time: '16h30 - 18h30',
-            prof: 'avec Charly',
-            gym: 'Stade Charlety',
-          },
+          null,
+          null,
         ],
         // Rangée 3
         [
@@ -256,13 +241,41 @@ export default {
             gym: 'Gymnase Stadium',
           },
           {
+            title: 'Judo Enfant (7-9 ans)',
+            time: '17h00 - 18h00',
+            prof: 'avec Charly',
+            gym: 'Gymnase Caillaux',
+          },
+          {
+            title: 'Baby Judo (4-6 ans)',
+            time: '15h30 - 16h30',
+            prof: 'avec Charly',
+            gym: 'Stade Charlety',
+          },
+        ],
+        // Rangée 4
+        [
+          null,
+          {
+            title: 'Judo Enfant (10-14 ans)',
+            time: '16h00 - 17h30',
+            prof: 'avec Charly',
+            gym: 'Gymnase Stadium',
+          },
+          {
             title: 'Judo Enfant (10-14 ans)',
             time: '18h00 - 19h00',
             prof: 'avec Charly',
             gym: 'Gymnase Caillaux',
           },
+          {
+            title: 'Groupe Espoir et Cours Kata',
+            time: '16h30 - 18h30',
+            prof: 'avec Charly',
+            gym: 'Stade Charlety',
+          },
         ],
-        // Rangée 4
+        // Rangée 5
         [
           {
             title: 'Judo Adultes',
@@ -271,8 +284,8 @@ export default {
             gym: 'Gymnase Caillaux',
           },
           {
-            title: 'Judo Enfant (10-14 ans)',
-            time: '16h00 - 17h30',
+            title: 'Judo Adultes',
+            time: '19h00 - 20h20',
             prof: 'avec Charly',
             gym: 'Gymnase Stadium',
           },
@@ -282,19 +295,6 @@ export default {
             prof: 'avec Charly',
             gym: 'Gymnase Caillaux',
           },
-          null,
-        ],
-        // Rangée 5
-        [
-          null,
-          {
-            title: 'Judo Adultes',
-            time: '19h00 - 20h20',
-            prof: 'avec Romane',
-            gym: 'Gymnase Stadium',
-          },
-
-          null,
           null,
         ],
       ],
@@ -336,7 +336,7 @@ export default {
             {
               title: 'Judo Adultes',
               time: '19h00 - 20h20',
-              prof: 'avec Romane',
+              prof: 'avec Charly',
               gym: 'Gymnase Stadium',
             },
           ],
@@ -475,7 +475,7 @@ export default {
               day: 'Mercredi',
               time: '19h00 - 20h20',
               gym: 'Gymnase Stadium',
-              prof: 'avec Romane',
+              prof: 'avec Charly',
             },
             {
               day: 'Vendredi',
