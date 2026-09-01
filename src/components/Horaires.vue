@@ -120,8 +120,8 @@ Avec ce code ci: "
             :style="{ width: cardWidth + 'px' }"
           >
             <div class="shadow-sm bg-white">
-              <h2 class="text-lg font-bold text-center mb-4 day-title">{{ day.name }}</h2>
-              <div v-for="(cours, j) in day.courses" :key="j" class="p-4 mb-4 border-b pb-2">
+              <h2 class="text-lg font-bold text-center day-title">{{ day.name }}</h2>
+              <div v-for="(cours, j) in day.courses" :key="j" class="p-4 border-b text-center">
                 <h3 class="font-semibold">{{ cours.title }}</h3>
                 <p>{{ cours.time }}</p>
                 <p v-if="cours.prof">{{ cours.prof }}</p>
@@ -136,10 +136,10 @@ Avec ce code ci: "
             </div>
             <div v-if="day.name === 'Samedi' && mobilePlanning[4]">
               <div class="shadow-sm bg-white">
-                <h2 class="text-lg font-bold text-center mb-4 day-title">
+                <h2 class="text-lg font-bold text-center day-title">
                   {{ mobilePlanning[4].name }}
                 </h2>
-                <div class="p-4 mb-4 border-b pb-2">
+                <div class="p-4 border-b text-center">
                   <h3 class="font-semibold">{{ mobilePlanning[4].courses.title }}</h3>
                   <p>{{ mobilePlanning[4].courses.time }}</p>
                   <p v-if="mobilePlanning[4].courses.prof">{{ mobilePlanning[4].courses.prof }}</p>
@@ -316,6 +316,12 @@ export default {
           name: 'Mercredi',
           courses: [
             {
+              title: 'Groupe Espoir',
+              time: '13h00 - 14h00',
+              prof: 'avec Charly',
+              gym: 'Gymnase Stadium',
+            },
+            {
               title: 'Baby Judo (4-6 ans)',
               time: '14h00 - 14h45',
               prof: 'avec Charly',
@@ -370,6 +376,12 @@ export default {
             {
               title: 'Baby Judo (4-6 ans)',
               time: '15h30 - 16h30',
+              prof: 'avec Charly',
+              gym: 'Stade Charlety',
+            },
+            {
+              title: 'Groupe Espoir et Cours Kata',
+              time: '16h30 - 18h30',
               prof: 'avec Charly',
               gym: 'Stade Charlety',
             },
@@ -578,6 +590,9 @@ export default {
 .container {
   margin-right: auto;
   margin-left: auto;
+}
+h2 {
+  margin-bottom: 0 !important;
 }
 button {
   width: 80%;
