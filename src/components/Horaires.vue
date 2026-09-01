@@ -167,6 +167,7 @@ Avec ce code ci: "
         <h3 class="text-lg font-bold">{{ cours.title }}</h3>
         <p v-if="cours.age" class="italic text-gray-600">{{ cours.age }}</p>
         <div v-for="(seance, i) in cours.courses" :key="i" class="mt-2">
+          <h3 v-if="seance.day === 'Samedi'" class="text-lg font-bold">{{ cours.titleKata }}</h3>
           <p>- {{ seance.day }} de {{ seance.time }}</p>
           <p>
             <router-link
@@ -210,7 +211,7 @@ export default {
         [
           null,
           {
-            title: 'Groupe Excellence',
+            title: 'Groupe Espoir',
             time: '13h00 - 14h00',
             prof: 'avec Charly',
             gym: 'Gymnase Stadium',
@@ -239,8 +240,8 @@ export default {
             gym: 'Gymnase Caillaux',
           },
           {
-            title: 'Groupe Excellence',
-            time: '16h30 - 17h30',
+            title: 'Groupe Espoir et Cours Kata',
+            time: '16h30 - 18h30',
             prof: 'avec Charly',
             gym: 'Stade Charlety',
           },
@@ -433,7 +434,8 @@ export default {
           ],
         },
         {
-          title: 'Groupe Excellence',
+          title: 'Groupe Espoir',
+          titleKata: 'Groupe Espoir et Cours Kata',
           courses: [
             {
               day: 'Mercredi',
@@ -443,7 +445,7 @@ export default {
             },
             {
               day: 'Samedi',
-              time: '16h30 - 17h30',
+              time: '16h30 - 18h30',
               gym: 'Stade Charlety',
               prof: 'avec Charly',
             },

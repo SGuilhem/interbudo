@@ -75,7 +75,7 @@
       </div>
     </div>
 
-    <!-- Groupe Excellence -->
+    <!-- Groupe Espoir -->
     <div class="content relative mt-16 border-red-custom">
       <img
         src="../assets/Equipes2.png"
@@ -85,7 +85,7 @@
       <h2
         class="absolute top-0 -left-6 -translate-y-1/2 bg-white px-6 py-2 text-xl font-semibold rounded-sm shadow-2xl baby-judo-color"
       >
-        Groupe Excellence
+        Groupe Espoir
       </h2>
       <p class="lg:mx-0 mx-2 text-md pt-4 pb-4">
         Ce groupe sera créé dès la rentrée et sera composé des enfants souhaitant s’investir

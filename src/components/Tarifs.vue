@@ -108,14 +108,14 @@ export default {
           id: 2,
           title: 'Enfants',
           age: 'Enfants de 7 à 14 ans et Étudiant',
-          prix: '330€',
+          prix: '350€',
         },
         {
           id: 3,
           title: 'Ados et adultes',
           age: '+14 ans, Adultes',
           prix: '390€',
-          promo: `Fidélité après 3 ans d'ancienneté 330€ !`,
+          promo: `Fidélité après 3 ans d'ancienneté 350€ !`,
         },
         {
           id: 4,

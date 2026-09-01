@@ -63,7 +63,7 @@
     <ul class="flex items-center justify-center gap-6">
       <!-- Logo -->
       <li>
-        <a href="#description">
+        <a href="/">
           <img src="/logo-interbudo.png" alt="Logo Interbudo" class="h-8" />
         </a>
       </li>
