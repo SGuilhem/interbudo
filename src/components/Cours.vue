@@ -1,7 +1,8 @@
 <template>
-  <div class="container pt-16">
+  <div class="container">
     <!-- Baby Judo -->
-    <div class="content relative border-red-custom">
+    <h1>Cours de judo à Paris 13e | Interbudo</h1>
+    <div class="content relative border-red-custom mt-12">
       <img
         src="../assets/Equipes2.png"
         alt="Cours Adultes"

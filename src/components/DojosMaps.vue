@@ -1,6 +1,16 @@
 <template>
   <div class="container lg:w-3/4 pt-16">
-    <h1>Nos Dojos</h1>
+    <h1>
+      Dojos et horaires de judo à Paris 13e <br />
+      Interbudo
+    </h1>
+    <div class="frame bg-white mb-6">
+      <p class="text-md lg:text-lg text-gray-700">
+        Interbudo dispose de trois dojos dans le 13ème arrondissement de Paris. Le dojo principal
+        est situé au Gymnase Caillaux, mais nous avons également accès au Gymnase Stadium et au
+        Stade Charlety pour les cours et les compétitions.
+      </p>
+    </div>
     <div class="flex flex-col justify-center gap-10">
       <div v-for="dojo in dojos" :key="dojo.id">
         <div
@@ -158,5 +168,13 @@ button:hover {
   border: 1px solid #cdced0;
   background: #fff;
   box-shadow: rgb(200, 200, 200) 0px 0px 8px;
+}
+.frame {
+  padding: 30px;
+  border: 1px solid #cdced0;
+  box-shadow: rgb(200, 200, 200) 0px 0px 8px;
+  @media (max-width: 1024px) {
+    padding: 15px;
+  }
 }
 </style>

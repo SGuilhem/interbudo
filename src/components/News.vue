@@ -12,16 +12,16 @@
       <h2
         class="absolute top-0 -left-6 -translate-y-1/2 bg-white px-6 py-2 text-xl font-semibold rounded-sm shadow-2xl"
       >
-        Le Club
+        Club de judo à Paris 13e
       </h2>
       <!-- ↓ <p> remplacé par <div> car il contient un <div> enfant -->
       <div class="lg:mx-0 mx-2 text-md pt-4">
-        Interbudo a été créé en 2000 sous l’impulsion d’un groupe de passionnés. Aujourd’hui, il est
-        composé d’une centaine de licenciés et de deux professeurs de Judo qui axent leur pédagogie
-        sur la base des deux principes fondamentaux érigés par Jigoro Kano : “la meilleure
-        utilisation de l’énergie” (ou la recherche de l’efficacité maximale) et la célèbre “entraide
-        et prospérité mutuelle”, indispensable à l’épanouissement et la progression de chacun.e sur
-        le tatami ! <br />
+        Situé dans le 13e arrondissement de Paris,Interbudo a été créé en 2000 sous l’impulsion d’un
+        groupe de passionnés. Aujourd’hui, il est composé d’une centaine de licenciés et de deux
+        professeurs de Judo qui axent leur pédagogie sur la base des deux principes fondamentaux
+        érigés par Jigoro Kano : “la meilleure utilisation de l’énergie” (ou la recherche de
+        l’efficacité maximale) et la célèbre “entraide et prospérité mutuelle”, indispensable à
+        l’épanouissement et la progression de chacun.e sur le tatami ! <br />
         Le club est donc animé d’un esprit d’entraide et de partage : accueil des débutant.e.s, vie
         sociale en dehors des cours, stage de judo pendant les vacances, regroupements interclubs
         réguliers avec plusieurs clubs amis permettant des rencontres avec d’autres élèves et

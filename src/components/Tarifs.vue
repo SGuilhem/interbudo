@@ -1,6 +1,9 @@
 <template>
   <div class="container pt-16">
-    <h1>Tarifs</h1>
+    <h1>
+      Tarifs des cours de judo à Paris 13e <br />
+      Interbudo
+    </h1>
     <!-- Desktop layout -->
     <div v-if="!isMobile" class="flex flex-wrap justify-center">
       <div v-for="tarif in tarifs" :key="tarif.id" class="w-1/3 mb-4">
