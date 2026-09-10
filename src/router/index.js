@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import HomePage from '@/pages/HomePage.vue'
 import CoursPage from '@/pages/CoursPage.vue'
+import EquipementsPage from '@/pages/EquipementsPage.vue'
 /* import DojosMapsPage from '@/pages/DojosMapsPage.vue' */
 import DojosHorairesPage from '@/pages/DojosHorairesPage.vue'
 
@@ -17,6 +18,7 @@ import ArticlesPage from '@/pages/ArticlesPage.vue'
 const routes = [
   { path: '/', component: HomePage },
   { path: '/cours', component: CoursPage },
+  { path: '/equipements', component: EquipementsPage },
   /* { path: '/dojosmaps', component: DojosMapsPage }, */
   { path: '/dojos-horaires', component: DojosHorairesPage },
   { path: '/photos', component: PhotosPage },

@@ -93,6 +93,7 @@ export default {
         { id: 5, label: 'Tarifs', to: '/tarifs' },
         { id: 6, label: 'Inscriptions', to: '/inscriptions' },
         { id: 7, label: 'Documents', to: '/documents' },
+        { id: 8, label: 'Equipements', to: '/equipements' },
         { id: 8, label: 'Articles', to: '/articles' },
         { id: 9, label: 'Photos', to: '/photos' },
         { id: 10, label: 'Partenaires', to: '/partenaires' },
