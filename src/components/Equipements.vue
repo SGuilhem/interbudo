@@ -19,7 +19,7 @@
       </div>
     </div>
 
-    <div class="frame bg-white mb-6">
+    <!-- <div class="frame bg-white mb-6">
       <p class="text-md lg:text-lg text-gray-700">
         Vous trouverez ci-dessous le RIB du club :
       </p>
@@ -32,7 +32,7 @@
         class="thumbnail cursor-pointer"
         @click="openLightbox(ribIndex)"
       />
-    </div>
+    </div> -->
 
     <!-- Lightbox -->
     <Teleport to="body">
@@ -73,26 +73,25 @@
       </div>
     </Teleport>
     <div class="frame bg-white mb-6">
-        
-        <div class="flex justify-center">
-          <a
-            href="https://interbudo.fr/pdf/equipements-interbudo.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button class="btn-primary">Télécharger le Catalogue des équipements</button>
-          </a>
-        </div>
-        <div class="flex justify-center lg:mt-4">
-          <a
-            href="https://interbudo.fr/pdf/RIB-Interbudo.JPG"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button class="btn-primary">Télécharger le RIB du Club</button>
-          </a>
-        </div>
+      <div class="flex justify-center">
+        <a
+          href="https://interbudo.fr/pdf/equipements-interbudo.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="btn-primary">Télécharger le Catalogue des équipements</button>
+        </a>
       </div>
+      <!-- <div class="flex justify-center lg:mt-4">
+        <a
+          href="https://interbudo.fr/pdf/RIB-Interbudo.JPG"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button class="btn-primary">Télécharger le RIB du Club</button>
+        </a>
+      </div> -->
+    </div>
   </div>
 </template>
 
@@ -104,7 +103,7 @@ import equipementsInterbudo2 from '@/assets/equipements-interbudo2.jpg'
 import equipementsInterbudo3 from '@/assets/equipements-interbudo3.jpg'
 import equipementsInterbudo4 from '@/assets/equipements-interbudo4.jpg'
 import equipementsInterbudo5 from '@/assets/equipements-interbudo5.jpg'
-import ribInterbudo from '@/assets/RIB-interbudo.jpg'
+/* import ribInterbudo from '@/assets/RIB-interbudo.jpg' */
 
 const images = [
   equipementsInterbudo1,
@@ -112,12 +111,12 @@ const images = [
   equipementsInterbudo3,
   equipementsInterbudo4,
   equipementsInterbudo5,
-  ribInterbudo,
+  /* ribInterbudo, */
 ]
 
 const imagesEquipements = images.slice(0, 5)
 
-const ribIndex = 5
+/* const ribIndex = 5 */
 
 const selectedIndex = ref(null)
 const touchStartX = ref(0)
@@ -182,7 +181,7 @@ function handleTouchEnd(e) {
   padding: 30px;
   border: 1px solid #cdced0;
   box-shadow: rgb(200, 200, 200) 0px 0px 8px;
-  justify-self: center
+  justify-self: center;
 }
 
 @media (max-width: 1024px) {
