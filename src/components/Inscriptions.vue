@@ -80,7 +80,7 @@ export default {
     return {
       isMobile: false,
       formulaire: {
-        dossierInscription: '`https://interbudo.fr/pdf/Dossier-inscription-2026-2027.pdf`',
+        dossierInscription: 'https://interbudo.fr/pdf/Dossier-inscription%20-2026-2027.pdf',
         attestationQsMajeurs: 'https://interbudo.fr/pdf/ATTESTATION%20QS%20sport%20majeurs.pdf',
         attestationQsMineurs:
           'https://interbudo.fr/pdf/ATTESTATION%20questionnaire%20sant%C3%A9%20mineurs.pdf',

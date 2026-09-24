@@ -123,11 +123,18 @@ export default {
         {
           id: 4,
           title: 'Cotisation Famille',
-          age: '2 membres',
+          age: '2 enfants',
           prix: '620€',
         },
         {
           id: 5,
+          title: 'Cotisation Famille',
+          age: '1 adulte + 1 enfant',
+          prix: '650€',
+          promo: `Fidélité après 3 ans d'ancienneté 350€ !`,
+        },
+        {
+          id: 6,
           title: 'Cotisation Famille',
           age: '3 membres',
           prix: '820€',
